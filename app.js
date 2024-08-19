@@ -13,7 +13,7 @@ function processTechnologies(data) {
     });
     return Object.entries(techCount)
         .sort((a, b) => b[1] - a[1])
-        .slice(0, 20)
+        .slice(0, 40)
         .reduce((obj, [key, value]) => {
             obj[key] = value;
             return obj;
@@ -34,7 +34,7 @@ function createChart(techData) {
     var options = {
         chart: {
             type: 'bar',
-            height: 1100,
+            height: 2000,
             toolbar: {
                 show: true
             }
