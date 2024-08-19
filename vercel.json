@@ -1,0 +1,13 @@
+{
+    "cleanUrls": true,
+    "git": {
+        "deploymentEnabled": {
+            "main": false,
+            "dev": false
+        }
+    },
+    "github": {
+        "autoAlias": false,
+        "silent": true
+    }
+}
