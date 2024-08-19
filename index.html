@@ -22,6 +22,121 @@
 
 <body>
 
+    <nav class="bg-white border-gray-200 fixed top-0 start-0 w-full z-20 sm:py-0 py-3">
+        <div class="flex flex-wrap items-center justify-between max-w-screen-xl mx-auto p-4">
+            <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+                <span class="self-center sm:text-5xl text-4xl font-bold whitespace-nowrap">
+                    Skill<span class="text-indigo-500">Set</span>
+                </span>
+            </a>
+            <div class="flex items-center md:order-2 space-x-1 md:space-x-2 rtl:space-x-reverse">
+                <a href="#" class="text-black rounded-lg text-sm px-5">
+                    Contribute
+                </a>
+                <button data-collapse-toggle="mega-menu" type="button"
+                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-black rounded-lg md:hidden focus:outline-none focus:ring-1 focus:ring-indigo-300"
+                    aria-controls="mega-menu" aria-expanded="false">
+                </button>
+            </div>
+            <div id="mega-menu" class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1">
+                <ul class="flex flex-col mt-4 font-medium md:flex-row md:mt-0 md:space-x-8 rtl:space-x-reverse">
+                    <li>
+                        <button id="mega-menu-dropdown-button" data-dropdown-toggle="mega-menu-dropdown"
+                            class="flex items-center justify-between w-full p-5 rounded font-medium text-white border-b bg-indigo-500">
+                            Job Positions
+                        </button>
+                        <div id="mega-menu-dropdown"
+                            class="absolute z-10 grid hidden w-auto grid-cols-2 text-md bg-white border border-gray-100 rounded-lg shadow-md md:grid-cols-3">
+                            <div class="p-10">
+                                <ul class="space-y-7">
+                                    <li>
+                                        <a href="/position/frontend/frontend.html"
+                                            class="flex items-center text-black hover:text-indigo-500">
+                                            <img src="/assets/icons/frontend.svg" alt="frontend" class="w-5 h-5 mr-2" />
+                                            Frontend
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/position/backend/backend.html"
+                                            class="flex items-center text-black hover:text-indigo-500">
+                                            <img src="/assets/icons/backend.svg" alt="backend" class="w-5 h-5 mr-2" />
+                                            Backend
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/position/devops/devops.html"
+                                            class="flex items-center text-black hover:text-indigo-500">
+                                            <img src="/assets/icons/devops.svg" alt="devops" class="w-5 h-5 mr-2" />
+                                            DevOps
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="px-5 py-10">
+                                <ul class="space-y-7">
+                                    <li>
+                                        <a href="/position/data/data.html"
+                                            class="flex items-center text-black hover:text-indigo-500">
+                                            <img src="/assets/icons/data.svg" alt="data" class="w-5 h-5 mr-2" />
+                                            Data
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/position/full-stack/full-stack.html"
+                                            class="flex items-center text-black hover:text-indigo-500">
+                                            <img src="/assets/icons/full-stack.svg" alt="full-stack"
+                                                class="w-5 h-5 mr-2" />
+                                            Full Stack
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/position/design/design.html"
+                                            class="flex items-center text-black hover:text-indigo-500">
+                                            <img src="/assets/icons/design.svg" alt="design" class="w-5 h-5 mr-2" />
+                                            Design
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="sm:px-10 sm:py-10 px-10 py-5">
+                                <ul class="space-y-7">
+                                    <li>
+                                        <a href="/position/ios/ios.html"
+                                            class="flex items-center text-black hover:text-indigo-500">
+                                            <img src="/assets/icons/ios.svg" alt="ios" class="w-5 h-5 mr-2" />
+                                            iOS
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/position/android/android.html"
+                                            class="flex items-center text-black hover:text-indigo-500">
+                                            <img src="/assets/icons/android.svg" alt="android" class="w-5 h-5 mr-2" />
+                                            Android
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/position/project-management/project-management.html"
+                                            class="flex items-center text-black hover:text-indigo-500">
+                                            <img src="/assets/icons/project-management.svg" alt="project-management"
+                                                class="w-5 h-5 mr-2" />
+                                            Project Management
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#"
+                            class="block py-2 px-3 text-gray-900 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-indigo-500 md:p-5">
+                            About
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
     <script src="app.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
