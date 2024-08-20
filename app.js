@@ -116,7 +116,7 @@ async function init() {
 
     const uniqueTechCount = countUniqueTechnologies(data);
     const techCountElement = document.getElementById('techCount');
-    animateCount(techCountElement, uniqueTechCount, 1000, 'technologies found');
+    animateCount(techCountElement, uniqueTechCount, 1000, 'skills found');
 
     const techData = processTechnologies(data);
     createChart(techData);
