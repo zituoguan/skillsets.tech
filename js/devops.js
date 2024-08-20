@@ -1,3 +1,5 @@
+import { countUniqueTechnologies, animateCount } from "./functions.js";
+
 async function getData() {
     const response = await fetch('/data/devops.json');
     const data = await response.json();
@@ -18,16 +20,6 @@ function processTechnologies(data) {
             obj[key] = value;
             return obj;
         }, {});
-}
-
-function countUniqueTechnologies(data) {
-    const uniqueTechnologies = new Set();
-    data.forEach(item => {
-        item.technologies.forEach(tech => {
-            uniqueTechnologies.add(tech);
-        });
-    });
-    return uniqueTechnologies.size;
 }
 
 function createChart(techData) {
@@ -85,25 +77,6 @@ function createChart(techData) {
 
     var chart = new ApexCharts(document.querySelector("#techChart"), options);
     chart.render();
-}
-
-function animateCount(element, endValue, duration, text) {
-    let startTime = null;
-
-    function animate(currentTime) {
-        if (startTime === null) startTime = currentTime;
-        const progress = currentTime - startTime;
-        const currentValue = Math.min(Math.floor(progress / duration * endValue), endValue);
-        element.innerHTML = `
-        <p class="text-indigo-500 text-7xl font-bold">${currentValue}</p>
-        <p class="font-normal text-2xl mt-8">${text}</p>
-        `;
-        if (currentValue < endValue) {
-            requestAnimationFrame(animate);
-        }
-    }
-
-    requestAnimationFrame(animate);
 }
 
 async function init() {
