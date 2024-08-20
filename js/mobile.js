@@ -39,7 +39,7 @@ function createChart(techData) {
             categories: Object.keys(techData),
             labels: {
                 style: {
-                    fontSize: '16px',
+                    fontSize: '14px',
                     fontFamily: 'JetBrains Mono',
                 }
             }
