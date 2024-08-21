@@ -5,6 +5,7 @@ const Navbar: React.FC = () => {
     const location = useLocation();
     const [buttonText, setButtonText] = useState("Job Positions");
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+    const [isNavbarOpen, setIsNavbarOpen] = useState(false);
     const dropdownRef = useRef<HTMLDivElement>(null);
     const buttonRef = useRef<HTMLButtonElement>(null);
 
@@ -50,13 +51,25 @@ const Navbar: React.FC = () => {
         if (isDropdownOpen && dropdownRef.current && buttonRef.current) {
             const buttonRect = buttonRef.current.getBoundingClientRect();
             dropdownRef.current.style.top = `${buttonRect.bottom}px`;
-            dropdownRef.current.style.left = `${buttonRect.left + buttonRect.width / 2}px`;
-            dropdownRef.current.style.transform = 'translateX(-50%)';
+
+            if (window.innerWidth < 768) {
+                dropdownRef.current.style.left = `50%`;
+                dropdownRef.current.style.transform = `translateX(-50%)`;
+            } else {
+                dropdownRef.current.style.left = `${
+                    buttonRect.left + buttonRect.width / 2
+                }px`;
+                dropdownRef.current.style.transform = `translateX(-50%)`;
+            }
         }
     }, [isDropdownOpen]);
 
     const toggleDropdown = () => {
         setIsDropdownOpen(!isDropdownOpen);
+    };
+
+    const toggleNavbar = () => {
+        setIsNavbarOpen(!isNavbarOpen);
     };
 
     return (
@@ -75,10 +88,9 @@ const Navbar: React.FC = () => {
                         Contribute
                     </p>
                     <button
-                        data-collapse-toggle="mega-menu"
                         type="button"
                         className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-black rounded-lg md:hidden focus:outline-none focus:ring-1 focus:ring-indigo-300"
-                        aria-controls="mega-menu"
+                        onClick={toggleNavbar}
                     >
                         <img
                             src="/assets/icons/menu.svg"
@@ -89,17 +101,17 @@ const Navbar: React.FC = () => {
                 </div>
                 <div
                     id="mega-menu"
-                    className={`items-center justify-between ${
-                        isDropdownOpen ? "flex" : "hidden"
+                    className={`items-center justify-center ${
+                        isNavbarOpen ? "flex" : "hidden"
                     } w-full md:flex md:w-auto md:order-1`}
                 >
                     <ul className="flex flex-col mt-4 font-medium md:flex-row md:mt-0 md:space-x-8 rtl:space-x-reverse">
-                        <li>
+                        <li className="md:flex md:items-center md:justify-center w-full">
                             <button
                                 id="mega-menu-dropdown-button"
                                 ref={buttonRef}
                                 data-dropdown-toggle="mega-menu-dropdown"
-                                className="flex items-center justify-between w-full p-5 rounded font-medium text-white border-b bg-indigo-500 relative"
+                                className="flex items-center justify-between w-full md:w-auto p-5 rounded font-medium text-white border-b bg-indigo-500 relative"
                                 onClick={toggleDropdown}
                                 aria-expanded={
                                     isDropdownOpen ? "true" : "false"
@@ -118,7 +130,7 @@ const Navbar: React.FC = () => {
                                 className={`absolute z-10 grid ${
                                     isDropdownOpen ? "block" : "hidden"
                                 } max-w-screen-md grid-cols-2 text-md bg-white border border-gray-100 rounded-lg shadow-md md:grid-cols-3`}
-                                style={{ minWidth: "300px" }} // Ensuring minimum width for dropdown
+                                style={{ minWidth: "300px" }}
                             >
                                 <div className="p-10">
                                     <ul className="space-y-7">
