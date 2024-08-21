@@ -1,13 +1,15 @@
 {
-    "cleanUrls": true,
-    "git": {
-        "deploymentEnabled": {
-            "main": false,
-            "dev": false
-        }
-    },
-    "github": {
-        "autoAlias": false,
-        "silent": true
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/"
     }
+  ],
+  "cleanUrls": true,
+  "git": {
+    "deploymentEnabled": {
+      "main": false,
+      "dev": false
+    }
+  }
 }

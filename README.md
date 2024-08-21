@@ -9,10 +9,3 @@ By scanning and processing job postings, SkillSet identifies the key competencie
 You can browse through a variety of IT departments to explore the skills required for each role:
 
 `Frontend`, `Backend`, `DevOps`, `Data`, `Full Stack`, `Design`, `Quality Assurance`, `iOS/Android`, `Project Management`
-
-##
-
-| Version | 0.0.0 |
-| :---    | :---  |
-| Release date: | August 20, 2024 |
-| Changelog:    | [View commits](https://github.com/stefanicjuraj/skillset/commits/main/) |
