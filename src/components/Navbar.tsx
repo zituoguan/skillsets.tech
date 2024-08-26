@@ -4,95 +4,57 @@ import { Link, useLocation } from "react-router-dom";
 const Navbar: React.FC = () => {
     const location = useLocation();
     const [buttonText, setButtonText] = useState("Job Positions");
-    const [seniorityButtonText, setSeniorityButtonText] = useState("Seniority");
+    // const [seniorityButtonText, setSeniorityButtonText] = useState("Seniority");
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-    const [isSeniorityDropdownOpen, setIsSeniorityDropdownOpen] =
-        useState(false);
+    // const [isSeniorityDropdownOpen, setIsSeniorityDropdownOpen] =
+    //     useState(false);
     const [isNavbarOpen, setIsNavbarOpen] = useState(false);
     const dropdownRef = useRef<HTMLDivElement>(null);
-    const seniorityDropdownRef = useRef<HTMLDivElement>(null);
+    // const seniorityDropdownRef = useRef<HTMLDivElement>(null);
     const buttonRef = useRef<HTMLButtonElement>(null);
-    const seniorityButtonRef = useRef<HTMLButtonElement>(null);
+    // const seniorityButtonRef = useRef<HTMLButtonElement>(null);
 
     useEffect(() => {
-        if (location.pathname === "/") {
-            setButtonText("Job Positions");
-            setSeniorityButtonText("Seniority");
-        } else if (
-            location.pathname.includes("/frontend") ||
-            location.pathname.includes("/backend") ||
-            location.pathname.includes("/devops") ||
-            location.pathname.includes("/data") ||
-            location.pathname.includes("/full-stack") ||
-            location.pathname.includes("/design") ||
-            location.pathname.includes("/quality-assurance") ||
-            location.pathname.includes("/management") ||
-            location.pathname.includes("/mobile")
-        ) {
-            switch (location.pathname) {
-                case "/frontend":
-                    setButtonText("Frontend");
-                    break;
-                case "/backend":
-                    setButtonText("Backend");
-                    break;
-                case "/devops":
-                    setButtonText("DevOps");
-                    break;
-                case "/data":
-                    setButtonText("Data");
-                    break;
-                case "/full-stack":
-                    setButtonText("Full Stack");
-                    break;
-                case "/design":
-                    setButtonText("UX / UI");
-                    break;
-                case "/quality-assurance":
-                    setButtonText("Quality Assurance");
-                    break;
-                case "/management":
-                    setButtonText("Management");
-                    break;
-                case "/mobile":
-                    setButtonText("iOS/Android");
-                    break;
-                default:
-                    setButtonText("Job Positions");
-                    break;
-            }
-            setSeniorityButtonText("Seniority");
-        } else if (
-            location.pathname.includes("/junior") ||
-            location.pathname.includes("/mid") ||
-            location.pathname.includes("/senior")
-        ) {
-            switch (location.pathname) {
-                case "/junior":
-                    setSeniorityButtonText("Junior");
-                    break;
-                case "/mid":
-                    setSeniorityButtonText("Mid");
-                    break;
-                case "/senior":
-                    setSeniorityButtonText("Senior");
-                    break;
-                default:
-                    setSeniorityButtonText("Seniority");
-                    break;
-            }
-            setButtonText("Job Positions");
+        switch (location.pathname) {
+            case "/frontend":
+                setButtonText("Frontend");
+                break;
+            case "/backend":
+                setButtonText("Backend");
+                break;
+            case "/devops":
+                setButtonText("DevOps");
+                break;
+            case "/data":
+                setButtonText("Data");
+                break;
+            case "/full-stack":
+                setButtonText("Full Stack");
+                break;
+            case "/design":
+                setButtonText("UX / UI");
+                break;
+            case "/quality-assurance":
+                setButtonText("Quality Assurance");
+                break;
+            case "/mobile":
+                setButtonText("iOS/Android");
+                break;
+            case "/management":
+                setButtonText("Management");
+                break;
+            default:
+                setButtonText("Job Positions");
+                break;
         }
 
         setIsDropdownOpen(false);
-        setIsSeniorityDropdownOpen(false);
     }, [location.pathname]);
 
     useEffect(() => {
         if (isDropdownOpen && dropdownRef.current && buttonRef.current) {
             const buttonRect = buttonRef.current.getBoundingClientRect();
             dropdownRef.current.style.top = `${buttonRect.bottom}px`;
-
             if (window.innerWidth < 768) {
                 dropdownRef.current.style.left = `50%`;
                 dropdownRef.current.style.transform = `translateX(-50%)`;
@@ -103,37 +65,17 @@ const Navbar: React.FC = () => {
                 dropdownRef.current.style.transform = `translateX(-50%)`;
             }
         }
-
-        if (
-            isSeniorityDropdownOpen &&
-            seniorityDropdownRef.current &&
-            seniorityButtonRef.current
-        ) {
-            const buttonRect =
-                seniorityButtonRef.current.getBoundingClientRect();
-            seniorityDropdownRef.current.style.top = `${buttonRect.bottom}px`;
-
-            if (window.innerWidth < 768) {
-                seniorityDropdownRef.current.style.left = `50%`;
-                seniorityDropdownRef.current.style.transform = `translateX(-50%)`;
-            } else {
-                seniorityDropdownRef.current.style.left = `${
-                    buttonRect.left + buttonRect.width / 2
-                }px`;
-                seniorityDropdownRef.current.style.transform = `translateX(-50%)`;
-            }
-        }
-    }, [isDropdownOpen, isSeniorityDropdownOpen]);
+    }, [isDropdownOpen]);
 
     const toggleDropdown = () => {
         setIsDropdownOpen(!isDropdownOpen);
-        setIsSeniorityDropdownOpen(false);
+        // setIsSeniorityDropdownOpen(false);
     };
 
-    const toggleSeniorityDropdown = () => {
-        setIsSeniorityDropdownOpen(!isSeniorityDropdownOpen);
-        setIsDropdownOpen(false);
-    };
+    // const toggleSeniorityDropdown = () => {
+    //     setIsSeniorityDropdownOpen(!isSeniorityDropdownOpen);
+    //     setIsDropdownOpen(false);
+    // };
 
     const toggleNavbar = () => {
         setIsNavbarOpen(!isNavbarOpen);
@@ -188,7 +130,7 @@ const Navbar: React.FC = () => {
                                 <img
                                     src="/assets/icons/chevron.svg"
                                     alt="chevron"
-                                    className="w-6 h-6 ml-4 mr-8"
+                                    className="w-6 h-6 ml-4"
                                 />
                             </button>
 
@@ -352,77 +294,6 @@ const Navbar: React.FC = () => {
                                                     className="w-5 h-5 mr-2"
                                                 />
                                                 Management
-                                            </Link>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </li>
-                        <li className="md:flex md:items-center md:justify-center w-full">
-                            <button
-                                id="seniority-dropdown-button"
-                                ref={seniorityButtonRef}
-                                data-dropdown-toggle="seniority-menu-dropdown"
-                                className="flex items-center justify-between w-full md:w-auto p-5 rounded font-medium text-white border-b bg-indigo-500 relative"
-                                onClick={toggleSeniorityDropdown}
-                                aria-expanded={
-                                    isSeniorityDropdownOpen ? "true" : "false"
-                                }
-                            >
-                                {seniorityButtonText}
-                                <img
-                                    src="/assets/icons/chevron.svg"
-                                    alt="chevron"
-                                    className="w-6 h-6 ml-3"
-                                />
-                            </button>
-                            <div
-                                ref={seniorityDropdownRef}
-                                id="seniority-menu-dropdown"
-                                className={`absolute z-10 ${
-                                    isSeniorityDropdownOpen ? "block" : "hidden"
-                                } max-w-sm text-md bg-white border border-gray-100 rounded-lg shadow-md`}
-                                style={{ minWidth: "300px" }}
-                            >
-                                <div className="p-10">
-                                    <ul className="space-y-7">
-                                        <li>
-                                            <Link
-                                                to="/junior"
-                                                className="flex items-center text-black hover:text-indigo-500"
-                                                onClick={() =>
-                                                    setIsSeniorityDropdownOpen(
-                                                        false
-                                                    )
-                                                }
-                                            >
-                                                Junior
-                                            </Link>
-                                        </li>
-                                        <li>
-                                            <Link
-                                                to="/mid"
-                                                className="flex items-center text-black hover:text-indigo-500"
-                                                onClick={() =>
-                                                    setIsSeniorityDropdownOpen(
-                                                        false
-                                                    )
-                                                }
-                                            >
-                                                Mid
-                                            </Link>
-                                        </li>
-                                        <li>
-                                            <Link
-                                                to="/senior"
-                                                className="flex items-center text-black hover:text-indigo-500"
-                                                onClick={() =>
-                                                    setIsSeniorityDropdownOpen(
-                                                        false
-                                                    )
-                                                }
-                                            >
-                                                Senior
                                             </Link>
                                         </li>
                                     </ul>
