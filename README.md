@@ -9,3 +9,7 @@ By scanning and processing job postings, SkillSet identifies the key competencie
 You can browse through a variety of IT departments to explore the skills required for each role:
 
 `Frontend`, `Backend`, `DevOps`, `Data`, `Full Stack`, `Design`, `Quality Assurance`, `iOS/Android`, `Project Management`
+
+| **Job Advertisements Analyzed** | **Skills Found** |
+|---------------------------------|------------------|
+| 502                             | 132              |
