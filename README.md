@@ -12,4 +12,4 @@ You can browse through a variety of IT departments to explore the skills require
 
 | **Job Advertisements Analyzed** | **Skills Found** |
 |---------------------------------|------------------|
-| 502                             | 132              |
+| 739                             | 135              |
