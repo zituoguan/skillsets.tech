@@ -93,7 +93,7 @@ const Navbar: React.FC = () => {
                     </span>
                 </Link>
                 <div className="flex items-center md:order-2 space-x-1 md:space-x-2 rtl:space-x-reverse">
-                    <p className="text-black rounded-lg text-md px-5">
+                    <p className="text-black rounded-lg text-md px-5 invisible">
                         Contribute
                     </p>
                     <button
