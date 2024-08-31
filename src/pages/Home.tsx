@@ -16,7 +16,7 @@ function processSkills(data: { skills: string[] }[]) {
     });
     return Object.entries(skillCount)
         .sort((a, b) => b[1] - a[1])
-        .slice(0, 40)
+        .slice(0, 100)
         .reduce((obj: Record<string, number>, [key, value]) => {
             obj[key] = value;
             return obj;
@@ -174,7 +174,7 @@ const Home = () => {
                         options={chartOptions}
                         series={chartSeries}
                         type="bar"
-                        height="2000"
+                        height="5000"
                     />
                 )}
             </div>
