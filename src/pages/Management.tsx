@@ -176,7 +176,7 @@ const Management = () => {
                         options={chartOptions}
                         series={chartSeries}
                         type="bar"
-                        height="800"
+                        height="1100"
                     />
                 )}
             </div>
