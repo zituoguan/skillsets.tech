@@ -16,4 +16,4 @@ You can browse through a variety of IT departments to explore the skills require
 
 | **Job Advertisements Analyzed** | **Skills Found** |
 |---------------------------------|------------------|
-| 822                             | 141              |
+| 844                             | 141              |
