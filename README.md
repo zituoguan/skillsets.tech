@@ -14,6 +14,10 @@ You can browse through a variety of IT departments to explore the skills require
 
 `Frontend`, `Backend`, `DevOps`, `Data`, `Full Stack`, `Design`, `Quality Assurance`, `iOS/Android`, `Project Management`
 
+<div align="center">
+
 | **Job Advertisements Analyzed** | **Skills Found** |
 |---------------------------------|------------------|
 | 856                             | 141              |
+
+</div>
