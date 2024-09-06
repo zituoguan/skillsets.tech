@@ -4,7 +4,7 @@
     <img src="./public/assets/icons/favicon.svg" width="10%" />
 </div>
 
-<p align="center">Discover the most wanted skills by recruiters. Browse skills required for your job position.</p>
+<p align="center"><b>Discover the most wanted skills by recruiters. Browse skills required for your job position.</b></p>
 
 SkillSet is an application that analyzes job advertisements and extracts the most in-demand skills, technologies, and tools for different IT positions.
 
