@@ -210,7 +210,7 @@ const Backend = () => {
                             className="text-center text-2xl font-semibold sm:ml-10 mt-5 sm:mt-0"
                         ></div>
                     </div>
-                    <div className="mt-0 mb-40 mx-auto sm:w-2/3 w-full p-4 overflow-x-hidden">
+                    <div className="mt-0 mb-40 mx-auto sm:w-2/3 w-full p-4">
                         {chartOptions && chartSeries && (
                             <Chart
                                 options={chartOptions}

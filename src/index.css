@@ -2,6 +2,7 @@
 
 body {
   font-family: "Overpass Mono", monospace;
+  overflow-x: hidden;
   /* disable user select */
   user-select: none;
   -webkit-user-select: none;
