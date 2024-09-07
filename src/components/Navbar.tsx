@@ -114,13 +114,13 @@ const Navbar: React.FC = () => {
                         isNavbarOpen ? "flex" : "hidden"
                     } w-full md:flex md:w-auto md:order-1`}
                 >
-                    <ul className="flex flex-col mt-4 font-medium md:flex-row md:mt-0 md:space-x-8 rtl:space-x-reverse">
+                    <ul className="flex flex-col mt-4 md:flex-row md:mt-0 md:space-x-8 rtl:space-x-reverse">
                         <li className="md:flex md:items-center md:justify-center w-full">
                             <button
                                 id="mega-menu-dropdown-button"
                                 ref={buttonRef}
                                 data-dropdown-toggle="mega-menu-dropdown"
-                                className="flex items-center justify-between w-full md:w-auto p-5 rounded font-medium text-white border-b bg-indigo-500 relative whitespace-nowrap"
+                                className="flex items-center justify-between w-full md:w-auto p-5 rounded text-white border-b bg-indigo-500 relative whitespace-nowrap"
                                 onClick={toggleDropdown}
                                 aria-expanded={
                                     isDropdownOpen ? "true" : "false"
@@ -133,16 +133,15 @@ const Navbar: React.FC = () => {
                                     className="w-6 h-6 ml-4"
                                 />
                             </button>
-
                             <div
                                 ref={dropdownRef}
                                 id="mega-menu-dropdown"
                                 className={`absolute z-10 grid ${
                                     isDropdownOpen ? "block" : "hidden"
-                                } max-w-screen-md grid-cols-2 text-md bg-white border border-gray-100 rounded-lg shadow-md md:grid-cols-3`}
-                                style={{ minWidth: "300px" }}
+                                } max-w-screen-md grid-cols-2 sm:text-md text-sm bg-white border border-gray-100 rounded-lg shadow-md md:grid-cols-3`}
+                                style={{ minWidth: "400px" }}
                             >
-                                <div className="p-10">
+                                <div className="pl-10 pr-10 pt-10 sm:pb-10 pb-2">
                                     <ul className="space-y-7">
                                         <li>
                                             <Link
@@ -194,7 +193,7 @@ const Navbar: React.FC = () => {
                                         </li>
                                     </ul>
                                 </div>
-                                <div className="px-5 py-10">
+                                <div className="pl-10 pr-10 pt-10 pb-4">
                                     <ul className="space-y-7">
                                         <li>
                                             <Link
@@ -241,12 +240,12 @@ const Navbar: React.FC = () => {
                                                     alt="design"
                                                     className="w-5 h-5 mr-2"
                                                 />
-                                                UX / UI
+                                                UX/UI
                                             </Link>
                                         </li>
                                     </ul>
                                 </div>
-                                <div className="sm:px-10 sm:py-10 px-10 py-5">
+                                <div className="pt-4 sm:pt-10 pb-10 pl-10 pr-10">
                                     <ul className="space-y-7">
                                         <li>
                                             <Link
