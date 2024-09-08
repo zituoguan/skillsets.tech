@@ -189,7 +189,7 @@ const Design = () => {
                         options={chartOptions}
                         series={chartSeries}
                         type="bar"
-                        height="650"
+                        height="750"
                     />
                 )}
             </div>

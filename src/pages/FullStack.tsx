@@ -189,7 +189,7 @@ const FullStack = () => {
                         options={chartOptions}
                         series={chartSeries}
                         type="bar"
-                        height="2000"
+                        height="1200"
                     />
                 )}
             </div>
