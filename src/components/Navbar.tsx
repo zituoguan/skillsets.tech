@@ -88,7 +88,7 @@ const Navbar: React.FC = () => {
                     to="/"
                     className="flex items-center space-x-3 rtl:space-x-reverse"
                 >
-                    <span className="self-center sm:text-5xl text-4xl font-bold whitespace-nowrap">
+                    <span className="self-center sm:text-5xl text-3xl font-bold whitespace-nowrap">
                         Skill<span className="text-indigo-500">Sets</span>
                     </span>
                 </Link>
@@ -104,7 +104,7 @@ const Navbar: React.FC = () => {
                         <img
                             src="/assets/icons/menu.svg"
                             alt="menu"
-                            className="w-7 h-7"
+                            className="sm:w-7 sm:h-7 w-6 h-6"
                         />
                     </button>
                 </div>
