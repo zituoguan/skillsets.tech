@@ -89,7 +89,7 @@ const Navbar: React.FC = () => {
                     className="flex items-center space-x-3 rtl:space-x-reverse"
                 >
                     <span className="self-center sm:text-5xl text-4xl font-bold whitespace-nowrap">
-                        Skill<span className="text-indigo-500">Set</span>
+                        Skill<span className="text-indigo-500">Sets</span>
                     </span>
                 </Link>
                 <div className="flex items-center md:order-2 space-x-1 md:space-x-2 rtl:space-x-reverse">
