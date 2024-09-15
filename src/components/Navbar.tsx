@@ -191,7 +191,7 @@ const Navbar: React.FC = () => {
                                 id="mega-menu-dropdown-button"
                                 ref={buttonRef}
                                 data-dropdown-toggle="mega-menu-dropdown"
-                                className="flex items-center justify-between w-full md:w-auto p-5 rounded font-normal text-indigo-500 relative rounded-md bg-indigo-50 hover:shadow-sm"
+                                className="flex items-center justify-between w-full md:w-auto p-5 rounded font-normal text-indigo-500 relative rounded-md sm:text-md text-sm bg-indigo-50 hover:shadow-sm"
                                 onClick={toggleDropdown}
                                 aria-expanded={
                                     isDropdownOpen ? "true" : "false"
@@ -377,7 +377,7 @@ const Navbar: React.FC = () => {
                                 id="seniority-dropdown-button"
                                 ref={seniorityButtonRef}
                                 data-dropdown-toggle="seniority-menu-dropdown"
-                                className="flex items-center justify-between w-full md:w-auto p-5 rounded font-normal text-indigo-500 relative rounded-md bg-indigo-50 hover:shadow-sm"
+                                className="flex items-center justify-between w-full md:w-auto p-5 rounded font-normal text-indigo-500 relative rounded-md bg-indigo-50 hover:shadow-sm sm:text-md text-sm"
                                 onClick={toggleSeniorityDropdown}
                                 aria-expanded={
                                     isSeniorityDropdownOpen ? "true" : "false"
