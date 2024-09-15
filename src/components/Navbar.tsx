@@ -146,11 +146,16 @@ const Navbar: React.FC = () => {
                     to="/"
                     className="flex items-center space-x-3 rtl:space-x-reverse"
                 >
-                    <span className="self-center sm:text-4xl text-3xl font-bold whitespace-nowrap">
+                    <span className="self-center sm:text-4xl text-2xl font-bold whitespace-nowrap">
                         Skill<span className="text-indigo-500">Sets</span>
                     </span>
                 </Link>
                 <div className="flex items-center md:order-2 space-x-1 md:space-x-2 rtl:space-x-reverse">
+                    <p className="sm:text-sm text-xs text-gray-500 mr-2">
+                        Last updated
+                        <br />
+                        September 20
+                    </p>
                     <a
                         href="https://github.com/stefanicjuraj/skillsets"
                         target="_blank"
@@ -159,12 +164,12 @@ const Navbar: React.FC = () => {
                         <img
                             src="/assets/icons/github.svg"
                             alt="chevron"
-                            className="w-8 h-8"
+                            className="sm:w-8 sm:h-8 w-7 h-7 sm:ml-3 ml-0"
                         />
                     </a>
                     <button
                         type="button"
-                        className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-black rounded-lg md:hidden focus:outline-none focus:ring-1 focus:ring-indigo-300"
+                        className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-black rounded-lg md:hidden focus:outline-none focus:ring-1 focus:ring-indigo-300 border border-indigo-50"
                         onClick={toggleNavbar}
                     >
                         <img
@@ -186,7 +191,7 @@ const Navbar: React.FC = () => {
                                 id="mega-menu-dropdown-button"
                                 ref={buttonRef}
                                 data-dropdown-toggle="mega-menu-dropdown"
-                                className="flex items-center justify-between w-full md:w-auto p-5 rounded text-white border-b bg-indigo-500 relative whitespace-nowrap rounded-md"
+                                className="flex items-center justify-between w-full md:w-auto p-5 rounded font-normal text-indigo-500 relative rounded-md bg-indigo-50 hover:shadow-sm"
                                 onClick={toggleDropdown}
                                 aria-expanded={
                                     isDropdownOpen ? "true" : "false"
@@ -196,7 +201,7 @@ const Navbar: React.FC = () => {
                                 <img
                                     src="/assets/icons/chevron.svg"
                                     alt="chevron"
-                                    className="w-6 h-6 ml-4"
+                                    className="w-5 h-5 ml-3"
                                 />
                             </button>
                             <div
@@ -372,7 +377,7 @@ const Navbar: React.FC = () => {
                                 id="seniority-dropdown-button"
                                 ref={seniorityButtonRef}
                                 data-dropdown-toggle="seniority-menu-dropdown"
-                                className="flex items-center justify-between w-full md:w-auto p-5 rounded font-medium text-white border-b bg-indigo-500 relative rounded-md"
+                                className="flex items-center justify-between w-full md:w-auto p-5 rounded font-normal text-indigo-500 relative rounded-md bg-indigo-50 hover:shadow-sm"
                                 onClick={toggleSeniorityDropdown}
                                 aria-expanded={
                                     isSeniorityDropdownOpen ? "true" : "false"
@@ -382,7 +387,7 @@ const Navbar: React.FC = () => {
                                 <img
                                     src="/assets/icons/chevron.svg"
                                     alt="chevron"
-                                    className="w-6 h-6 ml-3"
+                                    className="w-5 h-5 ml-3"
                                 />
                             </button>
                             <div
@@ -394,7 +399,20 @@ const Navbar: React.FC = () => {
                                 style={{ minWidth: "200px" }}
                             >
                                 <div className="p-10">
-                                    <ul className="space-y-7">
+                                    <ul className="space-y-5">
+                                        <li>
+                                            <Link
+                                                to="/"
+                                                className="flex items-center text-black hover:text-indigo-500 pointer-events-none"
+                                                onClick={() =>
+                                                    setIsSeniorityDropdownOpen(
+                                                        false
+                                                    )
+                                                }
+                                            >
+                                                Intern
+                                            </Link>
+                                        </li>
                                         <li>
                                             <Link
                                                 to="/"
@@ -432,6 +450,19 @@ const Navbar: React.FC = () => {
                                                 }
                                             >
                                                 Senior
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link
+                                                to="/"
+                                                className="flex items-center text-black hover:text-indigo-500 pointer-events-none"
+                                                onClick={() =>
+                                                    setIsSeniorityDropdownOpen(
+                                                        false
+                                                    )
+                                                }
+                                            >
+                                                Manager
                                             </Link>
                                         </li>
                                     </ul>
