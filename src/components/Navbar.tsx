@@ -154,7 +154,7 @@ const Navbar: React.FC = () => {
                     <p className="sm:text-sm text-xs text-gray-500 mr-2">
                         Last updated
                         <br />
-                        September 20
+                        September 15
                     </p>
                     <a
                         href="https://github.com/stefanicjuraj/skillsets"
