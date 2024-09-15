@@ -85,7 +85,7 @@ const FullStack = () => {
                 yaxis: {
                     labels: {
                         style: {
-                            fontSize: "18px",
+                            fontSize: "16px",
                             fontFamily: "JetBrains Mono",
                         },
                     },
@@ -102,7 +102,7 @@ const FullStack = () => {
                     },
                 },
                 fill: {
-                    colors: ["#6875F5"],
+                    colors: ["#8DA2FB"],
                 },
                 tooltip: {
                     theme: "light",
