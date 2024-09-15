@@ -85,7 +85,7 @@ const Home = () => {
                 yaxis: {
                     labels: {
                         style: {
-                            fontSize: "18px",
+                            fontSize: "16px",
                             fontFamily: "JetBrains Mono",
                         },
                     },
@@ -97,12 +97,12 @@ const Home = () => {
                         barHeight: "80%",
                         colors: {
                             backgroundBarColors: [],
-                            backgroundBarOpacity: 1,
+                            backgroundBarOpacity: 0,
                         },
                     },
                 },
                 fill: {
-                    colors: ["#6875F5"],
+                    colors: ["#8DA2FB"],
                 },
                 tooltip: {
                     theme: "light",
@@ -164,12 +164,12 @@ const Home = () => {
     return (
         <div className="app">
             <header className="text-center pt-40 mb-10 p-4 animation glow delay-1">
-                <p className="text-4xl font-bold mt-10">
+                <h2 className="text-4xl font-bold mt-10">
                     Discover the most wanted skills by recruiters
-                </p>
-                <p className="text-xl mt-8">
+                </h2>
+                <h2 className="text-xl mt-8">
                     Browse skills required for your job position
-                </p>
+                </h2>
             </header>
             <div className="flex flex-col sm:flex-row justify-center items-center mt-20 mb-10 animation glow delay-2">
                 <div
