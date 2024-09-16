@@ -20,6 +20,6 @@ You can browse through a variety of IT departments to explore the skills require
 
 | **Job Advertisements Analyzed** | **Skills Found**  |
 |---------------------------------|-------------------|
-| 1012                             | 152              |
+| 1090                            | 157              |
 
 </div>
