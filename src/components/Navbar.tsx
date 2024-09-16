@@ -154,7 +154,7 @@ const Navbar: React.FC = () => {
                     <p className="sm:text-sm text-xs text-gray-500 mr-2">
                         Last updated
                         <br />
-                        September 15
+                        17/09/2024
                     </p>
                     <a
                         href="https://github.com/stefanicjuraj/skillsets"
@@ -402,21 +402,8 @@ const Navbar: React.FC = () => {
                                     <ul className="space-y-5">
                                         <li>
                                             <Link
-                                                to="/"
-                                                className="flex items-center text-black hover:text-indigo-500 pointer-events-none"
-                                                onClick={() =>
-                                                    setIsSeniorityDropdownOpen(
-                                                        false
-                                                    )
-                                                }
-                                            >
-                                                Intern
-                                            </Link>
-                                        </li>
-                                        <li>
-                                            <Link
-                                                to="/"
-                                                className="flex items-center text-black hover:text-indigo-500 pointer-events-none"
+                                                to="/junior"
+                                                className="flex items-center text-black hover:text-indigo-500"
                                                 onClick={() =>
                                                     setIsSeniorityDropdownOpen(
                                                         false
@@ -428,8 +415,8 @@ const Navbar: React.FC = () => {
                                         </li>
                                         <li>
                                             <Link
-                                                to="/"
-                                                className="flex items-center text-black hover:text-indigo-500 pointer-events-none"
+                                                to="/mid"
+                                                className="flex items-center text-black hover:text-indigo-500"
                                                 onClick={() =>
                                                     setIsSeniorityDropdownOpen(
                                                         false
@@ -441,8 +428,8 @@ const Navbar: React.FC = () => {
                                         </li>
                                         <li>
                                             <Link
-                                                to="/"
-                                                className="flex items-center text-black hover:text-indigo-500 pointer-events-none"
+                                                to="/senior"
+                                                className="flex items-center text-black hover:text-indigo-500"
                                                 onClick={() =>
                                                     setIsSeniorityDropdownOpen(
                                                         false
@@ -450,19 +437,6 @@ const Navbar: React.FC = () => {
                                                 }
                                             >
                                                 Senior
-                                            </Link>
-                                        </li>
-                                        <li>
-                                            <Link
-                                                to="/"
-                                                className="flex items-center text-black hover:text-indigo-500 pointer-events-none"
-                                                onClick={() =>
-                                                    setIsSeniorityDropdownOpen(
-                                                        false
-                                                    )
-                                                }
-                                            >
-                                                Manager
                                             </Link>
                                         </li>
                                     </ul>
