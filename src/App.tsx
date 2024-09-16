@@ -10,6 +10,9 @@ import Design from "./pages/Design";
 import QualityAssurance from "./pages/QA";
 import Mobile from "./pages/iOSAndroid";
 import Management from "./pages/Management";
+import Junior from "./pages/seniority/Junior";
+import Mid from "./pages/seniority/Mid";
+import Senior from "./pages/seniority/Senior";
 
 function App() {
     return (
@@ -27,6 +30,10 @@ function App() {
                     <Route path="/quality-assurance" element={<QualityAssurance />} />
                     <Route path="/mobile" element={<Mobile />} />
                     <Route path="/management" element={<Management />} />
+                    {/* seniority */}
+                    <Route path="/junior" element={<Junior />} />
+                    <Route path="/mid" element={<Mid />} />
+                    <Route path="/senior" element={<Senior />} />
                 </Routes>
             </Router>
         </>
