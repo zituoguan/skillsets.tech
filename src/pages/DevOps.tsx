@@ -189,7 +189,7 @@ const DevOps = () => {
                         options={chartOptions}
                         series={chartSeries}
                         type="bar"
-                        height="800"
+                        height="1700"
                     />
                 )}
             </div>

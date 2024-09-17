@@ -189,7 +189,7 @@ const Frontend = () => {
                         options={chartOptions}
                         series={chartSeries}
                         type="bar"
-                        height="900"
+                        height="2000"
                     />
                 )}
             </div>
