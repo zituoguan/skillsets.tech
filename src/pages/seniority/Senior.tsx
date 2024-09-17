@@ -166,7 +166,7 @@ const Senior = () => {
             <header className="text-center pt-40 mb-10 p-4 animation glow delay-1">
                 <p className="text-4xl font-bold mt-10">
                     The most wanted
-                    <span className="text-indigo-500"> Medium (Mid) </span>
+                    <span className="text-indigo-500"> Senior </span>
                     skills
                 </p>
                 <p className="text-xl mt-8">
