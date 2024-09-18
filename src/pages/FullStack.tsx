@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Chart from "react-apexcharts";
+import countSkills from "../util/countSkills";
 
 async function getData() {
     const response = await fetch("/data/full-stack.json");
@@ -21,16 +22,6 @@ function processSkills(data: { skills: string[] }[]) {
             obj[key] = value;
             return obj;
         }, {});
-}
-
-function countSkills(data: { skills: string[] }[]) {
-    const skillSet = new Set<string>();
-    data.forEach((item) => {
-        item.skills.forEach((skill: string) => {
-            skillSet.add(skill);
-        });
-    });
-    return skillSet.size;
 }
 
 const FullStack = () => {
