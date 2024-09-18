@@ -1,27 +1,12 @@
 import { useEffect, useState } from "react";
 import Chart from "react-apexcharts";
 import countSkills from "../util/countSkills";
+import processSkills from "../util/processSkills";
 
 async function getData() {
     const response = await fetch("/data/backend.json");
     const data = await response.json();
     return data;
-}
-
-function processSkills(data: { skills: string[] }[]) {
-    const skillCount: Record<string, number> = {};
-    data.forEach((item) => {
-        item.skills.forEach((skill: string) => {
-            skillCount[skill] = (skillCount[skill] || 0) + 1;
-        });
-    });
-    return Object.entries(skillCount)
-        .sort((a, b) => b[1] - a[1])
-        .slice(0, 50)
-        .reduce((obj: Record<string, number>, [key, value]) => {
-            obj[key] = value;
-            return obj;
-        }, {});
 }
 
 const Backend = () => {
@@ -180,7 +165,7 @@ const Backend = () => {
                         options={chartOptions}
                         series={chartSeries}
                         type="bar"
-                        height="2500"
+                        height="3100"
                     />
                 )}
             </div>
