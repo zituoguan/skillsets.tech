@@ -1,4 +1,4 @@
-export default function countSkills(data: { skills: string[] }[]) {
+export default function skillCount(data: { skills: string[] }[]) {
     const skillSet = new Set<string>();
     data.forEach((item) => {
         item.skills.forEach((skill: string) => {
