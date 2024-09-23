@@ -146,9 +146,9 @@ const Navbar: React.FC = () => {
                     to="/"
                     className="flex items-center space-x-3 rtl:space-x-reverse"
                 >
-                    <span className="self-center sm:text-4xl text-2xl font-bold whitespace-nowrap">
+                    <h1 className="self-center sm:text-4xl text-2xl font-bold whitespace-nowrap">
                         Skill<span className="text-indigo-500">Sets</span>
-                    </span>
+                    </h1>
                 </Link>
                 <div className="flex items-center md:order-2 space-x-1 md:space-x-2 rtl:space-x-reverse">
                     <p className="sm:text-sm text-xs text-gray-500 mr-2">
