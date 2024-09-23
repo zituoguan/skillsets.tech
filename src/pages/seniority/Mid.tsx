@@ -111,7 +111,8 @@ const Mid = () => {
             <header className="text-center pt-40 mb-8 p-4 animation glow delay-1">
                 <h2 className="text-4xl font-bold mt-10">
                     Discover the most wanted{" "}
-                    <span className="text-indigo-500"> Medium (Mid) </span> skills
+                    <span className="text-indigo-500"> Medium (Mid) </span>{" "}
+                    skills
                 </h2>
                 <h2 className="text-xl mt-4 sm:p-4 p-8">
                     Browse skills required for your job position
@@ -141,7 +142,7 @@ const Mid = () => {
                     Search multiple skills by separating them with a space
                 </p>
             </div>
-            <div className="max-w-screen-sm mx-auto grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-6 mt-10 mb-80 px-4 animation glow delay-3">
+            <div className="max-w-screen-sm mx-auto grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4 mt-10 mb-80 px-4 animation glow delay-3">
                 {filteredSkills.map(([skill, count]) => (
                     <div
                         key={skill}

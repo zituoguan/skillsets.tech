@@ -141,7 +141,7 @@ const Mobile = () => {
                     Search multiple skills by separating them with a space
                 </p>
             </div>
-            <div className="max-w-screen-sm mx-auto grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-6 mt-10 mb-80 px-4 animation glow delay-3">
+            <div className="max-w-screen-sm mx-auto grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4 mt-10 mb-80 px-4 animation glow delay-3">
                 {filteredSkills.map(([skill, count]) => (
                     <div
                         key={skill}
