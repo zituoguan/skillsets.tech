@@ -15,6 +15,10 @@ const Navbar: React.FC = () => {
     const seniorityButtonRef = useRef<HTMLButtonElement>(null);
 
     useEffect(() => {
+        setIsNavbarOpen(false);
+    }, [location.pathname]);
+
+    useEffect(() => {
         if (location.pathname === "/") {
             setButtonText("Job Positions");
             setSeniorityButtonText("Seniority");
