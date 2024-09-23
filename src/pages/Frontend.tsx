@@ -127,7 +127,7 @@ const Frontend = () => {
                     className="text-center text-2xl font-semibold sm:ml-10 mt-5 sm:mt-0"
                 ></div>
             </div>
-            <div className="text-center mb-4 animation glow delay-3">
+            <div className="text-center mb-4 sm:px-0 px-4 animation glow delay-3">
                 <input
                     type="text"
                     placeholder="React JavaScript"
