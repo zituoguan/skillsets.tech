@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Chart from "react-apexcharts";
 import countSkills from "../util/countSkills";
 import processSkills from "../util/processSkills";
+import { animateCount } from "../util/animateCount";
 
 async function getData() {
     const response = await fetch("/data/all.json");
@@ -100,35 +101,6 @@ const Home = () => {
         init();
     }, []);
 
-    const animateCount = (
-        element: HTMLElement | null,
-        endValue: number,
-        duration: number,
-        text: string
-    ) => {
-        let startTime: number | null = null;
-
-        function animate(currentTime: number) {
-            if (startTime === null) startTime = currentTime;
-            const progress = currentTime - startTime;
-            const currentValue = Math.min(
-                Math.floor((progress / duration) * endValue),
-                endValue
-            );
-            if (element) {
-                element.innerHTML = `
-        <p class="text-indigo-500 text-7xl font-bold">${currentValue}</p>
-        <p class="font-normal text-2xl mt-8">${text}</p>
-        `;
-            }
-            if (currentValue < endValue) {
-                requestAnimationFrame(animate);
-            }
-        }
-
-        requestAnimationFrame(animate);
-    };
-
     useEffect(() => {
         const jobAdsCountElement = document.getElementById("jobAdsCount");
         animateCount(jobAdsCountElement, jobAdsCount, 3000, "job ads analyzed");
@@ -157,7 +129,7 @@ const Home = () => {
                     className="text-center text-2xl font-semibold sm:ml-10 mt-5 sm:mt-0"
                 ></div>
             </div>
-            <div className="mt-0 mb-40 mx-auto max-w-screen-lg p-4 animation glow delay-1">
+            <div className="mt-0 mb-40 mx-auto max-w-screen-lg p-4 animation glow delay-3">
                 {chartOptions && chartSeries && (
                     <Chart
                         options={chartOptions}
