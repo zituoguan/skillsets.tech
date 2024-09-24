@@ -15,7 +15,6 @@ const Modal: React.FC<ModalProps> = ({
     skill,
     count,
     skillRanks,
-    // skillPositions,
     skillUp,
     skillDown,
     skillMonths,
@@ -117,20 +116,6 @@ const Modal: React.FC<ModalProps> = ({
                 )}
 
                 <hr className="my-4" />
-
-                {/* <p className="text-black font-bold mb-2">💼 Top positions</p>
-                <div className="flex flex-wrap">
-                    {skillPositions &&
-                        skillPositions[skill] &&
-                        skillPositions[skill].map((industry, index) => (
-                            <span
-                                key={index}
-                                className="inline-block text-sm text-black bg-indigo-50 rounded px-2 py-1 mr-2 mb-2"
-                            >
-                                {industry}
-                            </span>
-                        ))}
-                </div> */}
 
                 <p className="text-black font-bold mb-2">
                     🤓 Complimentary skills
