@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Chart from "react-apexcharts";
 import countSkills from "../util/countSkills";
 import processSkills from "../util/processSkills";
@@ -191,13 +192,13 @@ const Home = () => {
             <div className="mx-auto text-center mb-8 animation glow delay-3">
                 <button
                     onClick={toggleView}
-                    className="px-8 py-4 inline-flex items-center justify-center text-sm bg-indigo-500 hover:bg-indigo-600 text-white rounded hover:bg-indigo-500 hover:shadow-md"
+                    className="px-8 py-4 inline-flex items-center justify-center text-sm bg-indigo-500 text-white rounded hover:bg-indigo-500 hover:shadow-lg border border-indigo-500 border-2"
                 >
                     {showChart ? (
                         <>
                             <span className="mr-3">Search your skills</span>
                             <img
-                                src="/assets/icons/arrow-right.svg"
+                                src="/assets/icons/search.svg"
                                 alt="arrow-right"
                                 className="w-5"
                             />
@@ -213,8 +214,17 @@ const Home = () => {
                         </>
                     )}
                 </button>
+                <Link to="/trends">
+                    <button className="sm:ml-8 ml-0 px-8 py-4 inline-flex items-center justify-center text-sm bg-indigo-50 hover:bg-indigo-50 text-indigo-500 rounded border border-indigo-300 border-2 hover:shadow-md sm:mt-0 mt-8">
+                        View Trends
+                        <img
+                            src="/assets/icons/chart.svg"
+                            alt="arrow-right"
+                            className="w-5 ml-3"
+                        />
+                    </button>
+                </Link>
             </div>
-
             <div className="mt-0 mb-40 mx-auto max-w-screen-lg p-4 animation glow delay-3">
                 {showChart ? (
                     chartOptions &&
@@ -234,7 +244,7 @@ const Home = () => {
                                 placeholder="React JavaScript"
                                 value={searchTerm}
                                 onChange={handleSearch}
-                                className="border border-2 border-indigo-300 w-full max-w-sm p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                                className="border border-2 border-indigo-300 w-full max-w-sm p-3 rounded-lg focus:outline-none focus:ring-2 hover:border-indigo-500 focus:ring-indigo-500 focus:border-transparent"
                             />
                         </div>
                         <div className="mx-auto text-center animation glow delay-1">
