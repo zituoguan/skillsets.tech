@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import ModalProps from "../types/modal";
 
 const Modal: React.FC<ModalProps> = ({
@@ -144,6 +145,12 @@ const Modal: React.FC<ModalProps> = ({
                         alt="exit modal"
                     />
                 </button>
+
+                <Link to={`/jobs/${skill}`}>
+                    <button className="sm:ml-3 mt-2 px-5 py-3 inline-flex items-center justify-center text-sm bg-indigo-50 hover:bg-indigo-50 text-indigo-500 rounded border border-indigo-300 border-2 hover:shadow-md">
+                        {skill} Jobs
+                    </button>
+                </Link>
             </div>
         </div>
     );
