@@ -189,7 +189,7 @@ const Home = () => {
                 ></div>
             </div>
 
-            <div className="mx-auto text-center mb-8 animation glow delay-3">
+            <div className="mx-auto text-center mb-8 animation glow delay-3 flex flex-col sm:flex-row justify-center items-center">
                 <button
                     onClick={toggleView}
                     className="px-8 py-4 inline-flex items-center justify-center text-sm bg-indigo-500 text-white rounded hover:bg-indigo-500 hover:shadow-lg border border-indigo-500 border-2"
@@ -208,14 +208,14 @@ const Home = () => {
                             <img
                                 src="/assets/icons/arrow-right.svg"
                                 alt="arrow-right"
-                                className="w-5 transition-transform rotate-180 mr-3"
+                                className="w-5 transition-transform rotate-180"
                             />
-                            <span>Back to chart view</span>
+                            <span className="ml-3">Back to chart view</span>
                         </>
                     )}
                 </button>
-                <Link to="/trends">
-                    <button className="sm:ml-8 ml-0 px-8 py-4 inline-flex items-center justify-center text-sm bg-indigo-50 hover:bg-indigo-50 text-indigo-500 rounded border border-indigo-300 border-2 hover:shadow-md sm:mt-0 mt-8">
+                <Link to="/trends" className="sm:ml-8 ml-0 sm:mt-0 mt-4">
+                    <button className="px-8 py-4 inline-flex items-center justify-center text-sm bg-indigo-50 hover:bg-indigo-50 text-indigo-500 rounded border border-indigo-300 border-2 hover:shadow-md">
                         View Trends
                         <img
                             src="/assets/icons/chart.svg"
