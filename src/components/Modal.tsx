@@ -13,33 +13,33 @@ const Modal: React.FC<ModalProps> = ({
     if (!skill) return null;
 
     return (
-        <div className="fixed inset-0 bg-opacity-10 backdrop-blur-sm flex justify-center items-center">
-            <div className="bg-white px-10 py-8 rounded-lg shadow-xl max-w-lg w-full relative">
+        <div className="fixed inset-0 flex items-center justify-center bg-opacity-10 backdrop-blur-sm">
+            <div className="relative w-full max-w-lg px-10 py-8 bg-white rounded-lg shadow-xl">
                 <button
-                    className="absolute top-4 right-4 p-2 bg-gray-50 text-white rounded-lg hover:bg-gray-200"
+                    className="absolute p-2 text-white rounded-lg top-4 right-4 bg-gray-50 hover:bg-gray-200"
                     onClick={onClose}
                 >
                     <img src="/assets/icons/exit.svg" alt="exit modal" />
                 </button>
-                <h3 className="text-3xl font-bold text-indigo-500 mb-4">
+                <h3 className="mb-4 text-3xl font-bold text-indigo-500">
                     {skill}
                 </h3>
-                <p className="text-black mb-2">
+                <p className="mb-2 text-black">
                     Ranked:{" "}
-                    <span className="text-indigo-500 font-bold">
+                    <span className="font-bold text-indigo-500">
                         {skillRanks && `#${skillRanks[skill]}`}
                     </span>
                 </p>
-                <p className="text-black mb-4">
+                <p className="mb-4 text-black">
                     Mentions:{" "}
-                    <span className="text-indigo-500 font-bold">{count}</span>{" "}
+                    <span className="font-bold text-indigo-500">{count}</span>{" "}
                 </p>
 
                 <hr className="my-4" />
 
                 {skillMonths && skillMonths[skill] && (
-                    <div className="text-black mb-4">
-                        <p className="font-bold mb-2">📈 Trending by month</p>
+                    <div className="mb-4 text-black">
+                        <p className="mb-2 font-bold">📈 Trending by month</p>
                         <ul>
                             {Object.entries(skillMonths[skill])
                                 .sort(([monthA], [monthB]) => {
@@ -81,7 +81,7 @@ const Modal: React.FC<ModalProps> = ({
                                             {month.charAt(0).toUpperCase() +
                                                 month.slice(1)}
                                             :{" "}
-                                            <span className="text-indigo-500 font-bold">
+                                            <span className="font-bold text-indigo-500">
                                                 {mentions}
                                             </span>{" "}
                                             mentions{" "}
@@ -107,25 +107,25 @@ const Modal: React.FC<ModalProps> = ({
 
                 <hr className="my-4" />
 
-                <p className="text-black font-bold mb-2">
+                <p className="mb-2 font-bold text-black">
                     🤓 Complimentary skills
                 </p>
 
                 {skillUp && (
-                    <p className="text-black mb-2 text-sm">
-                        <span className="text-green-500 font-bold">+</span>{" "}
+                    <p className="mb-2 text-sm text-black">
+                        <span className="font-bold text-green-500">+</span>{" "}
                         {skillUp[0]}:{" "}
-                        <span className="text-indigo-500 font-bold">
+                        <span className="font-bold text-indigo-500">
                             {skillUp[1]}
                         </span>{" "}
                         mentions
                     </p>
                 )}
                 {skillDown && (
-                    <p className="text-black mb-2 text-sm">
-                        <span className="text-red-500 font-bold">-</span>{" "}
+                    <p className="mb-2 text-sm text-black">
+                        <span className="font-bold text-red-500">-</span>{" "}
                         {skillDown[0]}:{" "}
-                        <span className="text-indigo-500 font-bold">
+                        <span className="font-bold text-indigo-500">
                             {skillDown[1]}
                         </span>{" "}
                         mentions
@@ -135,19 +135,19 @@ const Modal: React.FC<ModalProps> = ({
                 <hr className="my-4" />
 
                 <button
-                    className="px-5 py-3 inline-flex text-sm bg-indigo-500 hover:bg-indigo-600 text-white rounded hover:bg-indigo-500 hover:shadow-md"
+                    className="inline-flex px-5 py-3 text-sm text-white bg-indigo-500 rounded hover:bg-indigo-600 hover:bg-indigo-500 hover:shadow-md"
                     disabled
                 >
                     Follow {skill}
                     <img
                         src="/assets/icons/plus.svg"
-                        className="pl-3 w-8"
+                        className="w-8 pl-3"
                         alt="exit modal"
                     />
                 </button>
 
                 <Link to={`/jobs/${skill}`}>
-                    <button className="sm:ml-3 mt-2 px-5 py-3 inline-flex items-center justify-center text-sm bg-indigo-50 hover:bg-indigo-50 text-indigo-500 rounded border border-indigo-300 border-2 hover:shadow-md">
+                    <button className="inline-flex items-center justify-center px-5 py-3 mt-2 text-sm text-indigo-500 border border-2 border-indigo-300 rounded sm:ml-3 bg-indigo-50 hover:bg-indigo-50 hover:shadow-md">
                         {skill} Jobs
                     </button>
                 </Link>

@@ -144,18 +144,18 @@ const Navbar: React.FC = () => {
     };
 
     return (
-        <nav className="bg-white border-gray-200 fixed top-0 start-0 w-full z-20 sm:py-1 py-3">
-            <div className="flex flex-wrap items-center justify-between max-w-screen-xl mx-auto p-4">
+        <nav className="fixed top-0 z-20 w-full py-3 bg-white border-gray-200 start-0 sm:py-1">
+            <div className="flex flex-wrap items-center justify-between max-w-screen-xl p-4 mx-auto">
                 <Link
                     to="/"
                     className="flex items-center space-x-3 rtl:space-x-reverse"
                 >
-                    <h1 className="self-center sm:text-4xl text-2xl font-bold whitespace-nowrap">
+                    <h1 className="self-center text-2xl font-bold sm:text-4xl whitespace-nowrap">
                         Skill<span className="text-indigo-500">Sets</span>
                     </h1>
                 </Link>
-                <div className="flex items-center md:order-2 space-x-1 md:space-x-2 rtl:space-x-reverse">
-                    <p className="sm:text-sm text-xs text-gray-500 mr-2">
+                <div className="flex items-center space-x-1 md:order-2 md:space-x-2 rtl:space-x-reverse">
+                    <p className="mr-2 text-xs text-gray-500 sm:text-sm">
                         Last updated
                         <br />
                         28/09/2024
@@ -168,18 +168,18 @@ const Navbar: React.FC = () => {
                         <img
                             src="/assets/icons/github.svg"
                             alt="chevron"
-                            className="sm:w-8 sm:h-8 w-7 h-7 sm:ml-3 ml-0"
+                            className="ml-0 sm:w-8 sm:h-8 w-7 h-7 sm:ml-3"
                         />
                     </a>
                     <button
                         type="button"
-                        className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-black rounded-lg md:hidden focus:outline-none focus:ring-1 focus:ring-indigo-300 border border-indigo-50"
+                        className="inline-flex items-center justify-center w-10 h-10 p-2 text-sm text-black border rounded-lg md:hidden focus:outline-none focus:ring-1 focus:ring-indigo-300 border-indigo-50"
                         onClick={toggleNavbar}
                     >
                         <img
                             src="/assets/icons/menu.svg"
                             alt="menu"
-                            className="sm:w-7 sm:h-7 w-6 h-6"
+                            className="w-6 h-6 sm:w-7 sm:h-7"
                         />
                     </button>
                 </div>
@@ -190,12 +190,12 @@ const Navbar: React.FC = () => {
                     } w-full md:flex md:w-auto md:order-1`}
                 >
                     <ul className="flex flex-col mt-4 md:flex-row md:mt-0 md:space-x-8 rtl:space-x-reverse">
-                        <li className="md:flex md:items-center md:justify-center w-full">
+                        <li className="w-full md:flex md:items-center md:justify-center">
                             <button
                                 id="mega-menu-dropdown-button"
                                 ref={buttonRef}
                                 data-dropdown-toggle="mega-menu-dropdown"
-                                className="flex items-center justify-between w-full md:w-auto p-5 rounded font-normal text-indigo-500 relative rounded-md sm:text-md text-sm bg-indigo-50 hover:shadow-sm"
+                                className="relative flex items-center justify-between w-full p-5 text-sm font-normal text-indigo-500 rounded rounded-md md:w-auto sm:text-md bg-indigo-50 hover:shadow-sm"
                                 onClick={toggleDropdown}
                                 aria-expanded={
                                     isDropdownOpen ? "true" : "false"
@@ -216,7 +216,7 @@ const Navbar: React.FC = () => {
                                 } max-w-screen-md grid-cols-2 sm:text-md text-sm bg-white border border-gray-100 rounded-lg shadow-md md:grid-cols-3`}
                                 style={{ minWidth: "400px" }}
                             >
-                                <div className="pl-10 pr-10 pt-10 sm:pb-10 pb-2">
+                                <div className="pt-10 pb-2 pl-10 pr-10 sm:pb-10">
                                     <ul className="space-y-7">
                                         <li>
                                             <Link
@@ -268,7 +268,7 @@ const Navbar: React.FC = () => {
                                         </li>
                                     </ul>
                                 </div>
-                                <div className="pl-10 pr-10 pt-10 pb-4">
+                                <div className="pt-10 pb-4 pl-10 pr-10">
                                     <ul className="space-y-7">
                                         <li>
                                             <Link
@@ -320,7 +320,7 @@ const Navbar: React.FC = () => {
                                         </li>
                                     </ul>
                                 </div>
-                                <div className="pt-4 sm:pt-10 pb-10 pl-10 pr-10">
+                                <div className="pt-4 pb-10 pl-10 pr-10 sm:pt-10">
                                     <ul className="space-y-7">
                                         <li>
                                             <Link
@@ -375,13 +375,13 @@ const Navbar: React.FC = () => {
                             </div>
                         </li>
                     </ul>
-                    <ul className="flex flex-col mt-4 md:flex-row md:mt-0 md:space-x-8 rtl:space-x-reverse ml-3">
-                        <li className="md:flex md:items-center md:justify-center w-full">
+                    <ul className="flex flex-col mt-4 ml-3 md:flex-row md:mt-0 md:space-x-8 rtl:space-x-reverse">
+                        <li className="w-full md:flex md:items-center md:justify-center">
                             <button
                                 id="seniority-dropdown-button"
                                 ref={seniorityButtonRef}
                                 data-dropdown-toggle="seniority-menu-dropdown"
-                                className="flex items-center justify-between w-full md:w-auto p-5 rounded font-normal text-indigo-500 relative rounded-md bg-indigo-50 hover:shadow-sm sm:text-md text-sm"
+                                className="relative flex items-center justify-between w-full p-5 text-sm font-normal text-indigo-500 rounded rounded-md md:w-auto bg-indigo-50 hover:shadow-sm sm:text-md"
                                 onClick={toggleSeniorityDropdown}
                                 aria-expanded={
                                     isSeniorityDropdownOpen ? "true" : "false"

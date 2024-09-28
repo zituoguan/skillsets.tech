@@ -169,30 +169,30 @@ const Home = () => {
 
     return (
         <div className="app">
-            <header className="text-center pt-40 mb-10 p-4 animation glow delay-1">
-                <h2 className="text-4xl font-bold mt-10">
+            <header className="p-4 pt-40 mb-10 text-center animation glow delay-1">
+                <h2 className="mt-10 text-4xl font-bold">
                     Discover the most wanted skills by recruiters
                 </h2>
-                <h2 className="text-xl mt-8">
+                <h2 className="mt-8 text-xl">
                     Browse skills required for your job position
                 </h2>
             </header>
 
-            <div className="flex flex-col sm:flex-row justify-center items-center mt-20 mb-16 animation glow delay-2">
+            <div className="flex flex-col items-center justify-center mt-20 mb-16 sm:flex-row animation glow delay-2">
                 <div
                     id="jobAdsCount"
-                    className="text-center text-2xl font-semibold sm:mr-10"
+                    className="text-2xl font-semibold text-center sm:mr-10"
                 ></div>
                 <div
                     id="skillCount"
-                    className="text-center text-2xl font-semibold sm:ml-10 mt-5 sm:mt-0"
+                    className="mt-5 text-2xl font-semibold text-center sm:ml-10 sm:mt-0"
                 ></div>
             </div>
 
-            <div className="mx-auto text-center mb-8 animation glow delay-3 flex flex-col sm:flex-row justify-center items-center">
+            <div className="flex flex-col items-center justify-center mx-auto mb-8 text-center animation glow delay-3 sm:flex-row">
                 <button
                     onClick={toggleView}
-                    className="px-8 py-4 inline-flex items-center justify-center text-sm bg-indigo-500 text-white rounded hover:bg-indigo-500 hover:shadow-lg border border-indigo-500 border-2"
+                    className="inline-flex items-center justify-center px-8 py-4 text-sm text-white bg-indigo-500 border border-2 border-indigo-500 rounded hover:bg-indigo-500 hover:shadow-lg"
                 >
                     {showChart ? (
                         <>
@@ -214,8 +214,8 @@ const Home = () => {
                         </>
                     )}
                 </button>
-                <Link to="/trends" className="sm:ml-8 ml-0 sm:mt-0 mt-4">
-                    <button className="px-8 py-4 inline-flex items-center justify-center text-sm bg-indigo-50 hover:bg-indigo-50 text-indigo-500 rounded border border-indigo-300 border-2 hover:shadow-md">
+                <Link to="/trends" className="mt-4 ml-0 sm:ml-8 sm:mt-0">
+                    <button className="inline-flex items-center justify-center px-8 py-4 text-sm text-indigo-500 border border-2 border-indigo-300 rounded bg-indigo-50 hover:bg-indigo-50 hover:shadow-md">
                         View Trends
                         <img
                             src="/assets/icons/chart.svg"
@@ -225,7 +225,7 @@ const Home = () => {
                     </button>
                 </Link>
             </div>
-            <div className="mt-0 mb-40 mx-auto max-w-screen-lg p-4 animation glow delay-3">
+            <div className="max-w-screen-lg p-4 mx-auto mt-0 mb-40 animation glow delay-3">
                 {showChart ? (
                     chartOptions &&
                     chartSeries && (
@@ -238,46 +238,46 @@ const Home = () => {
                     )
                 ) : (
                     <div>
-                        <div className="text-center mb-4 sm:px-0 px-4 animation glow delay-1">
+                        <div className="px-4 mb-4 text-center sm:px-0 animation glow delay-1">
                             <input
                                 type="text"
                                 placeholder="React JavaScript"
                                 value={searchTerm}
                                 onChange={handleSearch}
-                                className="border border-2 border-indigo-300 w-full max-w-sm p-3 rounded-lg focus:outline-none focus:ring-2 hover:border-indigo-500 focus:ring-indigo-500 focus:border-transparent"
+                                className="w-full max-w-sm p-3 border border-2 border-indigo-300 rounded-lg focus:outline-none focus:ring-2 hover:border-indigo-500 focus:ring-indigo-500 focus:border-transparent"
                             />
                         </div>
                         <div className="mx-auto text-center animation glow delay-1">
-                            <p className="text-xs w-full mx-auto text-gray-500">
+                            <p className="w-full mx-auto text-xs text-gray-500">
                                 Search multiple skills by separating them with a
                                 space
                             </p>
                         </div>
-                        <div className="max-w-screen-sm mx-auto grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4 mt-10 mb-80 px-4 animation glow delay-1">
+                        <div className="grid max-w-screen-sm grid-cols-1 gap-4 px-4 mx-auto mt-10 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 mb-80 animation glow delay-1">
                             {filteredSkills.map(([skill, count]) => (
                                 <div
                                     key={skill}
-                                    className="bg-gray-100 p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-200 flex items-start cursor-pointer border border-transparent hover:border-indigo-300"
+                                    className="flex items-start p-6 transition-shadow duration-200 bg-gray-100 border border-transparent shadow-md cursor-pointer rounded-xl hover:shadow-lg hover:border-indigo-300"
                                     onClick={() =>
                                         handleCardClick(skill, count)
                                     }
                                 >
                                     <div
-                                        className="text-indigo-300 text-3xl mr-10 pt-2"
+                                        className="pt-2 mr-10 text-3xl text-indigo-300"
                                         style={{ minWidth: "32px" }}
                                     >
                                         {skillRanks && `#${skillRanks[skill]}`}
                                     </div>
                                     <div className="flex-grow">
-                                        <h3 className="sm:text-xl text-lg text-indigo-500">
+                                        <h3 className="text-lg text-indigo-500 sm:text-xl">
                                             {skill}
                                         </h3>
-                                        <p className="text-black sm:text-sm text-sm mt-1">
+                                        <p className="mt-1 text-sm text-black sm:text-sm">
                                             {count} mentions
                                         </p>
                                     </div>
-                                    <div className="ml-10 flex flex-col items-end justify-start">
-                                        <p className="text-black text-sm mb-2 text-right">
+                                    <div className="flex flex-col items-end justify-start ml-10">
+                                        <p className="mb-2 text-sm text-right text-black">
                                             Trending
                                         </p>
                                         <p className="text-sm">

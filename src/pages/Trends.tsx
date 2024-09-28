@@ -29,29 +29,29 @@ const Trends = () => {
 
     return (
         <div>
-            <header className="text-center pt-40 mb-10 p-4 animation glow delay-1">
-                <h2 className="text-4xl font-bold mt-10">
+            <header className="p-4 pt-40 mb-10 text-center animation glow delay-1">
+                <h2 className="mt-10 text-4xl font-bold">
                     Discover the most wanted skill trends
                 </h2>
-                <h2 className="text-xl mt-8">
+                <h2 className="mt-8 text-xl">
                     Browse skill trends by month and number of mentions
                 </h2>
             </header>
-            <div className="text-center mx-auto max-w-sm animation glow delay-2 sm:px-0 px-4">
+            <div className="max-w-sm px-4 mx-auto text-center animation glow delay-2 sm:px-0">
                 <form
                     onSubmit={handleSearch}
-                    className="text-center inline-flex mx-auto w-full "
+                    className="inline-flex w-full mx-auto text-center "
                 >
                     <input
                         type="text"
                         value={inputValue}
                         onChange={handleInputChange}
                         placeholder="Python JavaScript"
-                        className="border border-2 border-indigo-300 w-full p-3 rounded-lg focus:outline-none focus:ring-2 hover:border-indigo-500 focus:ring-indigo-500 focus:border-transparent"
+                        className="w-full p-3 border border-2 border-indigo-300 rounded-lg focus:outline-none focus:ring-2 hover:border-indigo-500 focus:ring-indigo-500 focus:border-transparent"
                     />
                     <button
                         type="submit"
-                        className="ml-2 px-4 py-3 bg-indigo-500 text-white rounded-lg"
+                        className="px-4 py-3 ml-2 text-white bg-indigo-500 rounded-lg"
                     >
                         <img
                             src="/assets/icons/search.svg"
@@ -61,8 +61,8 @@ const Trends = () => {
                     </button>
                 </form>
             </div>
-            <div className="mx-auto text-center mt-4 max-w-lg animation glow delay-2 sm:px-0 px-4">
-                <p className="text-xs w-full mx-auto text-gray-500">
+            <div className="max-w-lg px-4 mx-auto mt-4 text-center animation glow delay-2 sm:px-0">
+                <p className="w-full mx-auto text-xs text-gray-500">
                     Search multiple skills by separating them with a space
                 </p>
             </div>

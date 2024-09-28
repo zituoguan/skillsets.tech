@@ -98,18 +98,18 @@ const TrendsData = ({ skills }: { skills: string[] | null }) => {
 
     return (
         <div className="app animation glow delay-3">
-            <p className="text-sm mt-10 text-center max-w-screen-sm mx-auto">
+            <p className="max-w-screen-sm mx-auto mt-10 text-sm text-center">
                 {skills &&
                     skills.map((skill, index) => (
                         <span
                             key={index}
-                            className="text-black bg-indigo-50 px-2 py-1 mr-1 rounded"
+                            className="px-2 py-1 mr-1 text-black rounded bg-indigo-50"
                         >
                             {skill}
                         </span>
                     ))}
             </p>
-            <div className="mb-40 mx-auto max-w-screen-xl p-4 animation glow delay-1">
+            <div className="max-w-screen-xl p-4 mx-auto mb-40 animation glow delay-1">
                 {chartOptions && chartSeries && (
                     <Chart
                         options={chartOptions}

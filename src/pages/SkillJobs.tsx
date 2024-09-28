@@ -34,18 +34,18 @@ const SkillJobs = () => {
 
     return (
         <div className="app">
-            <header className="text-center pt-40 mb-10 p-4 animation glow delay-1">
-                <h2 className="text-4xl font-bold mt-10">
+            <header className="p-4 pt-40 mb-10 text-center animation glow delay-1">
+                <h2 className="mt-10 text-4xl font-bold">
                     Browse job listings for{" "}
                     <span className="text-indigo-500">{skill}</span>
                 </h2>
-                <h2 className="text-xl mt-8">
+                <h2 className="mt-8 text-xl">
                     View analyzed job advertisements
                 </h2>
             </header>
-            <div className="mx-auto text-center mb-8 animation glow delay-2 flex flex-col sm:flex-row justify-center items-center">
-                <Link to="/" className="sm:ml-8 ml-0 sm:mt-0 mt-4">
-                    <button className="px-8 py-4 inline-flex items-center justify-center text-sm bg-indigo-500 text-white rounded hover:bg-indigo-500 hover:shadow-lg border border-indigo-500 border-2">
+            <div className="flex flex-col items-center justify-center mx-auto mb-8 text-center animation glow delay-2 sm:flex-row">
+                <Link to="/" className="mt-4 ml-0 sm:ml-8 sm:mt-0">
+                    <button className="inline-flex items-center justify-center px-8 py-4 text-sm text-white bg-indigo-500 border border-2 border-indigo-500 rounded hover:bg-indigo-500 hover:shadow-lg">
                         <img
                             src="/assets/icons/arrow-right.svg"
                             alt="arrow-right"
@@ -55,37 +55,37 @@ const SkillJobs = () => {
                     </button>
                 </Link>
             </div>
-            <div className="mt-0 mb-40 mx-auto max-w-screen-lg p-4 animation glow delay-3">
+            <div className="max-w-screen-lg p-4 mx-auto mt-0 mb-40 animation glow delay-3">
                 {filteredJobs.length > 0 ? (
                     <>
-                        <p className="text-md text-center mb-8">
-                            <span className="text-indigo-500 font-bold">
+                        <p className="mb-8 text-center text-md">
+                            <span className="font-bold text-indigo-500">
                                 {filteredJobs.length}
                             </span>{" "}
                             job advertisement
                             {filteredJobs.length > 1 ? "s" : ""} for{" "}
-                            <span className="text-indigo-500 font-bold">
+                            <span className="font-bold text-indigo-500">
                                 {skill}
                             </span>
                         </p>
 
-                        <div className="max-w-screen-sm mx-auto grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4 mt-10 mb-80 px-4 animation glow delay-1">
+                        <div className="grid max-w-screen-sm grid-cols-1 gap-4 px-4 mx-auto mt-10 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 mb-80 animation glow delay-1">
                             {filteredJobs.map((job, index) => (
                                 <a
                                     key={index}
                                     href={job.url}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="block bg-gray-100 p-6 rounded-xl flex items-center justify-between cursor-pointer border border-transparent shadow-md hover:shadow-lg hover:border-indigo-300 transition-all duration-200"
+                                    className="flex items-center justify-between block p-6 transition-all duration-200 bg-gray-100 border border-transparent shadow-md cursor-pointer rounded-xl hover:shadow-lg hover:border-indigo-300"
                                 >
                                     <div className="flex-grow">
-                                        <h3 className="sm:text-xl text-lg">
+                                        <h3 className="text-lg sm:text-xl">
                                             Job Skill:{" "}
                                             <span className="text-indigo-500">
                                                 {skill}
                                             </span>
                                         </h3>
-                                        <p className="text-black text-sm mt-2">
+                                        <p className="mt-2 text-sm text-black">
                                             Industry:{" "}
                                             <span className="text-indigo-500">
                                                 {capitalizeFirstLetter(
@@ -93,7 +93,7 @@ const SkillJobs = () => {
                                                 )}
                                             </span>
                                         </p>
-                                        <p className="text-black text-sm mt-1">
+                                        <p className="mt-1 text-sm text-black">
                                             Month:{" "}
                                             <span className="text-indigo-500">
                                                 {capitalizeFirstLetter(
@@ -114,7 +114,7 @@ const SkillJobs = () => {
                     </>
                 ) : (
                     <div className="text-center">
-                        <p className="text-md text-black">
+                        <p className="text-black text-md">
                             No job listings found for{" "}
                             <span className="text-indigo-500">{skill}</span>
                         </p>

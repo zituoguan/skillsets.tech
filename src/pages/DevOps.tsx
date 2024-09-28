@@ -108,62 +108,62 @@ const DevOps = () => {
 
     return (
         <div className="app">
-            <header className="text-center pt-40 mb-8 p-4 animation glow delay-1">
-                <h2 className="text-4xl font-bold mt-10">
+            <header className="p-4 pt-40 mb-8 text-center animation glow delay-1">
+                <h2 className="mt-10 text-4xl font-bold">
                     Discover the most wanted{" "}
                     <span className="text-indigo-500"> DevOps </span> skills
                 </h2>
-                <h2 className="text-xl mt-4 sm:p-4 p-8">
+                <h2 className="p-8 mt-4 text-xl sm:p-4">
                     Browse skills required for your job position
                 </h2>
             </header>
-            <div className="flex flex-col sm:flex-row justify-center items-center mt-16 mb-16 animation glow delay-2">
+            <div className="flex flex-col items-center justify-center mt-16 mb-16 sm:flex-row animation glow delay-2">
                 <div
                     id="jobAdsCount"
-                    className="text-center text-2xl font-semibold sm:mr-10"
+                    className="text-2xl font-semibold text-center sm:mr-10"
                 ></div>
                 <div
                     id="skillCount"
-                    className="text-center text-2xl font-semibold sm:ml-10 mt-5 sm:mt-0"
+                    className="mt-5 text-2xl font-semibold text-center sm:ml-10 sm:mt-0"
                 ></div>
             </div>
-            <div className="text-center mb-4 sm:px-0 px-4 animation glow delay-3">
+            <div className="px-4 mb-4 text-center sm:px-0 animation glow delay-3">
                 <input
                     type="text"
                     placeholder="CI/CD Kubernetes"
                     value={searchTerm}
                     onChange={handleSearch}
-                    className="border border-2 border-indigo-300 w-full max-w-sm p-3 rounded-lg hover:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                    className="w-full max-w-sm p-3 border border-2 border-indigo-300 rounded-lg hover:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
                 />
             </div>
             <div className="mx-auto text-center animation glow delay-3">
-                <p className="text-xs w-full mx-auto text-gray-500">
+                <p className="w-full mx-auto text-xs text-gray-500">
                     Search multiple skills by separating them with a space
                 </p>
             </div>
-            <div className="max-w-screen-sm mx-auto grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4 mt-10 mb-80 px-4 animation glow delay-3">
+            <div className="grid max-w-screen-sm grid-cols-1 gap-4 px-4 mx-auto mt-10 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 mb-80 animation glow delay-3">
                 {filteredSkills.map(([skill, count]) => (
                     <div
                         key={skill}
-                        className="bg-gray-100 p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-200 flex items-start cursor-pointer border border-transparent hover:border-indigo-300"
+                        className="flex items-start p-6 transition-shadow duration-200 bg-gray-100 border border-transparent shadow-md cursor-pointer rounded-xl hover:shadow-lg hover:border-indigo-300"
                         onClick={() => handleCardClick(skill, count)}
                     >
                         <div
-                            className="text-indigo-300 text-3xl mr-10 pt-2"
+                            className="pt-2 mr-10 text-3xl text-indigo-300"
                             style={{ minWidth: "32px" }}
                         >
                             {skillRanks && `#${skillRanks[skill]}`}
                         </div>
                         <div className="flex-grow">
-                            <h3 className="sm:text-xl text-lg text-indigo-500">
+                            <h3 className="text-lg text-indigo-500 sm:text-xl">
                                 {skill}
                             </h3>
-                            <p className="text-black sm:text-sm text-sm mt-1">
+                            <p className="mt-1 text-sm text-black sm:text-sm">
                                 {count} mentions
                             </p>
                         </div>
-                        <div className="ml-10 flex flex-col items-end justify-start">
-                            <p className="text-black text-sm mb-2 text-right">
+                        <div className="flex flex-col items-end justify-start ml-10">
+                            <p className="mb-2 text-sm text-right text-black">
                                 Trending
                             </p>
                             <p className="text-sm">
