@@ -15,11 +15,13 @@ import Mid from "./pages/seniority/Mid";
 import Senior from "./pages/seniority/Senior";
 import Trends from "./pages/Trends";
 import SkillJobs from "./pages/SkillJobs";
+import ScrollToTop from "./util/scroll";
 
 function App() {
     return (
         <Router>
             <Navbar />
+            <ScrollToTop />
             <Routes>
                 <Route path="/" element={<Home />} />
                 {/* positions */}
