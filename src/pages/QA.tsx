@@ -134,7 +134,7 @@ const QualityAssurance = () => {
                     placeholder="Postman Jenkins"
                     value={searchTerm}
                     onChange={handleSearch}
-                    className="border border-2 border-indigo-300 w-full max-w-sm p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                    className="border border-2 border-indigo-300 w-full max-w-sm p-3 rounded-lg hover:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
                 />
             </div>
             <div className="mx-auto text-center animation glow delay-3">
