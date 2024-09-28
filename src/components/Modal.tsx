@@ -1,15 +1,4 @@
-import React from "react";
-
-interface ModalProps {
-    skill: string;
-    count: number;
-    skillRanks: Record<string, number> | null;
-    skillPositions: Record<string, string[]> | null;
-    skillUp: [string, number] | null;
-    skillDown: [string, number] | null;
-    skillMonths: Record<string, Record<string, number>> | null;
-    onClose: () => void;
-}
+import ModalProps from "../types/modal";
 
 const Modal: React.FC<ModalProps> = ({
     skill,
