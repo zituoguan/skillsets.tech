@@ -14,6 +14,7 @@ import Junior from "./pages/seniority/Junior";
 import Mid from "./pages/seniority/Mid";
 import Senior from "./pages/seniority/Senior";
 import Trends from "./pages/Trends";
+import SkillJobs from "./pages/SkillJobs";
 
 function App() {
     return (
@@ -38,6 +39,8 @@ function App() {
                 <Route path="/senior" element={<Senior />} />
                 {/* trends */}
                 <Route path="/trends" element={<Trends />} />
+                {/* jobs */}
+                <Route path="/jobs/:skill" element={<SkillJobs />} />
             </Routes>
         </Router>
     );
