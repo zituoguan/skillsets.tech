@@ -146,7 +146,7 @@ const QualityAssurance = () => {
                 {filteredSkills.map(([skill, count]) => (
                     <div
                         key={skill}
-                        className="bg-gray-100 p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-200 flex items-start cursor-pointer"
+                        className="bg-gray-100 p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-200 flex items-start cursor-pointer border border-transparent hover:border-indigo-300"
                         onClick={() => handleCardClick(skill, count)}
                     >
                         <div
