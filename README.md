@@ -23,3 +23,21 @@ You can browse through a variety of IT departments to explore the skills require
 | **[Junior](https://skillsets.vercel.app/junior)**                       | 35                              | 29                |
 | **[Medium (Mid)](https://skillsets.vercel.app/mid)**                    | 84                              | 77                |
 | **[Senior](https://skillsets.vercel.app/senior)**                       | 58                              | 74                |
+
+## Contributing
+
+Contribute by following the [contributing guide](https://docs.github.com/en/get-started/exploring-projects-on-github/contributing-to-a-project).
+
+## Tech Stack
+
+![node.js][node.js]
+![react][react]
+![typescript][typescript]
+![tailwind][tailwind]
+![python][python]
+
+[node.js]: https://img.shields.io/badge/node.js-339933?style=for-the-badge&logo=node.js&logoColor=white
+[react]: https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black
+[typescript]: https://img.shields.io/badge/typescript-3178C6?style=for-the-badge&logo=typescript&logoColor=white
+[tailwind]: https://img.shields.io/badge/tailwindcss-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white
+[python]: https://img.shields.io/badge/python-3776AB?style=for-the-badge&logo=tailwindcss&logoColor=white
