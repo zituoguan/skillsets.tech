@@ -2,7 +2,14 @@ export default function processTrendsDataChart(
     trendData: Record<string, Record<string, number>>,
     skills: string[] | null
 ) {
-    const months = Object.keys(trendData).sort();
+    const monthOrder = [
+        "january", "february", "march", "april", "may", "june", "july",
+        "august", "september", "october", "november", "december"
+    ];
+
+    const months = Object.keys(trendData).sort(
+        (a, b) => monthOrder.indexOf(a) - monthOrder.indexOf(b)
+    );
 
     const allSkills = new Set<string>();
     months.forEach((month) => {
