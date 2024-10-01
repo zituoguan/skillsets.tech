@@ -14,7 +14,7 @@ const Modal: React.FC<ModalProps> = ({
     if (!skill) return null;
 
     return (
-        <div className="fixed inset-0 flex items-center justify-center bg-opacity-10 backdrop-blur-sm">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-opacity-10 backdrop-blur-sm">
             <div className="relative w-full max-w-lg px-10 pt-8 pb-5 sm:px-12 sm:pt-12 sm:pb-8 bg-white rounded-lg shadow-xl">
                 <button
                     className="absolute p-2 text-white rounded-lg top-10 right-8 bg-gray-50 hover:bg-gray-200"
