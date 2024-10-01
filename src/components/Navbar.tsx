@@ -150,26 +150,21 @@ const Navbar: React.FC = () => {
                     to="/"
                     className="flex items-center space-x-3 rtl:space-x-reverse"
                 >
-                    <h1 className="self-center text-2xl font-bold sm:text-4xl whitespace-nowrap">
+                    <h1 className="self-center text-3xl font-bold sm:text-4xl whitespace-nowrap">
                         Skill<span className="text-indigo-500">Sets</span>
                     </h1>
                 </Link>
                 <div className="flex items-center space-x-1 md:order-2 md:space-x-2 rtl:space-x-reverse">
-                    <p className="mr-2 text-xs text-gray-500 sm:text-sm">
-                        Last updated
-                        <br />
-                        28/09/2024
-                    </p>
                     <a
                         href="https://github.com/stefanicjuraj/skillsets"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        <img
-                            src="/assets/icons/github.svg"
-                            alt="chevron"
-                            className="ml-0 sm:w-8 sm:h-8 w-7 h-7 sm:ml-3"
-                        />
+                        <p className="mr-2 text-xs text-gray-500 sm:text-sm">
+                            Last updated
+                            <br />
+                            28/09/2024
+                        </p>
                     </a>
                     <button
                         type="button"
