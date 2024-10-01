@@ -24,13 +24,13 @@ const Modal: React.FC<ModalProps> = ({
                 <h3 className="mb-4 text-3xl font-bold text-indigo-500">
                     {skill}
                 </h3>
-                <p className="mb-2 text-black">
+                <p className="mb-2 text-sm text-black">
                     Ranked:{" "}
                     <span className="font-bold text-indigo-500">
                         {skillRanks && `#${skillRanks[skill]}`}
                     </span>
                 </p>
-                <p className="mb-4 text-black">
+                <p className="mb-4 text-sm text-black">
                     Mentions:{" "}
                     <span className="font-bold text-indigo-500">{count}</span>{" "}
                 </p>
@@ -38,7 +38,7 @@ const Modal: React.FC<ModalProps> = ({
                 <hr className="my-4" />
 
                 {skillMonths && skillMonths[skill] && (
-                    <div className="mb-4 text-black">
+                    <div className="mb-4 text-black text-sm">
                         <p className="mb-2 font-bold">📈 Trending by month</p>
                         <ul>
                             {Object.entries(skillMonths[skill])
@@ -107,7 +107,7 @@ const Modal: React.FC<ModalProps> = ({
 
                 <hr className="my-4" />
 
-                <p className="mb-2 font-bold text-black">
+                <p className="mb-2 font-bold text-sm text-black">
                     🤓 Complimentary skills
                 </p>
 
@@ -123,7 +123,9 @@ const Modal: React.FC<ModalProps> = ({
                 )}
                 {skillDown && (
                     <p className="mb-2 text-sm text-black">
-                        <span className="font-bold text-red-500">-</span>{" "}
+                        <span className="font-bold text-sm text-red-500">
+                            -
+                        </span>{" "}
                         {skillDown[0]}:{" "}
                         <span className="font-bold text-indigo-500">
                             {skillDown[1]}
@@ -135,7 +137,7 @@ const Modal: React.FC<ModalProps> = ({
                 <hr className="my-4" />
 
                 <button
-                    className="inline-flex px-5 py-3 text-sm text-white bg-indigo-500 rounded hover:bg-indigo-600 hover:bg-indigo-500 hover:shadow-md"
+                    className="inline-flex px-5 py-3 text-sm text-white bg-indigo-500 border-2 border-indigo-500 rounded hover:bg-indigo-600 hover:bg-indigo-500 hover:shadow-md"
                     disabled
                 >
                     Follow {skill}
@@ -147,7 +149,7 @@ const Modal: React.FC<ModalProps> = ({
                 </button>
 
                 <Link to={`/jobs/${skill}`}>
-                    <button className="inline-flex items-center justify-center px-5 py-3 mt-2 text-sm text-indigo-500 border border-2 border-indigo-300 rounded sm:ml-3 bg-indigo-50 hover:bg-indigo-50 hover:shadow-md">
+                    <button className="inline-flex items-center justify-center px-5 py-3 mt-2 text-sm sm:ml-3 ml-1 text-indigo-500 border border-2 border-indigo-300 rounded sm:ml-3 bg-indigo-50 hover:bg-indigo-50 hover:shadow-md">
                         {skill} Jobs
                     </button>
                 </Link>
