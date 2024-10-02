@@ -108,7 +108,7 @@ const DevOps = () => {
                   const growthValueB = parseFloat(growthB.replace("%", ""));
                   return growthValueB - growthValueA;
               } else {
-                  return b[1] - a[1]; // Default sorting by count
+                  return b[1] - a[1];
               }
           })
         : [];
