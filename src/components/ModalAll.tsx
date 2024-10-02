@@ -33,10 +33,6 @@ const Modal: React.FC<ModalProps> = ({
                     Mentions:{" "}
                     <span className="font-bold text-indigo-500">{count}</span>{" "}
                 </p>
-                {/* <p className="mb-4 sm:text-sm text-xs text-black">
-                    Mentions:{" "}
-                    <span className="font-bold text-indigo-500">{count}</span>{" "}
-                </p> */}
 
                 <hr className="my-4" />
 
