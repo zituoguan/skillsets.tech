@@ -253,7 +253,7 @@ const Home = () => {
                                 space
                             </p>
                         </div>
-                        <div className="grid max-w-screen-sm grid-cols-1 gap-4 px-4 mx-auto mt-10 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 mb-80 animation glow delay-1">
+                        <div className="grid max-w-screen-sm grid-cols-1 gap-4 px-4 mx-auto mt-8 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 mb-80 animation glow delay-1">
                             {filteredSkills.map(([skill, count]) => (
                                 <div
                                     key={skill}
