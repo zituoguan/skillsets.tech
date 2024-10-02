@@ -45,6 +45,7 @@ const Home = () => {
         string,
         Record<string, number>
     > | null>(null);
+    const [sortByTrend, setSortByTrend] = useState<boolean>(false);
 
     useEffect(() => {
         async function init() {
@@ -155,17 +156,31 @@ const Home = () => {
         setSkillDown(null);
     };
 
-    const filteredSkills = topSkills
-        ? topSkills.filter(([skill]) => {
-              const searchTerms = searchTerm
-                  .split(" ")
-                  .map((term: string) => term.trim().toLowerCase());
+    const toggleSort = () => {
+        setSortByTrend((prevSortByTrend) => !prevSortByTrend);
+    };
 
-              return searchTerms.some((term: string) =>
-                  skill.toLowerCase().includes(term)
-              );
+    const sortedSkills = topSkills
+        ? topSkills.slice().sort((a, b) => {
+              if (sortByTrend) {
+                  const growthA = skillGrowth?.[a[0]] || "0%";
+                  const growthB = skillGrowth?.[b[0]] || "0%";
+                  const growthValueA = parseFloat(growthA.replace("%", ""));
+                  const growthValueB = parseFloat(growthB.replace("%", ""));
+                  return growthValueB - growthValueA;
+              } else {
+                  return b[1] - a[1];
+              }
           })
         : [];
+
+    const filteredSkills = sortedSkills.filter(([skill]) => {
+        const searchTerms = searchTerm
+            .split(" ")
+            .map((term) => term.trim().toLowerCase());
+
+        return searchTerms.some((term) => skill.toLowerCase().includes(term));
+    });
 
     return (
         <div className="app">
@@ -252,6 +267,19 @@ const Home = () => {
                                 Search multiple skills by separating them with a
                                 space
                             </p>
+                            <button
+                                onClick={toggleSort}
+                                className="mt-8 inline-flex items-center justify-center px-8 py-4 text-sm text-white bg-indigo-500 border border-2 border-indigo-500 rounded hover:bg-indigo-500 hover:shadow-lg"
+                            >
+                                {sortByTrend
+                                    ? "Sort by Default"
+                                    : "Sort by Trend"}
+                                <img
+                                    src="/assets/icons/sort.svg"
+                                    alt="arrow-right"
+                                    className="w-5 ml-2"
+                                />
+                            </button>
                         </div>
                         <div className="grid max-w-screen-sm grid-cols-1 gap-4 px-4 mx-auto mt-8 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 mb-80 animation glow delay-1">
                             {filteredSkills.map(([skill, count]) => (
