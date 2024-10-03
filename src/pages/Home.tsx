@@ -3,9 +3,7 @@ import { Link } from "react-router-dom";
 import Chart from "react-apexcharts";
 import countSkills from "../util/countSkills";
 import processSkills from "../util/processSkills";
-import processingSkills from "../util/processingSkills";
 import { animateCount } from "../util/animateCount";
-import Modal from "../components/ModalAll";
 
 async function getData() {
     const response = await fetch("/data/all.json");
@@ -21,31 +19,6 @@ const Home = () => {
     >(null);
     const [jobAdsCount, setJobAdsCount] = useState(0);
     const [skillCount, setSkillCount] = useState(0);
-    const [showChart, setShowChart] = useState(true);
-    const [topSkills, setTopSkills] = useState<[string, number][] | null>(null);
-    const [skillRanks, setSkillRanks] = useState<Record<string, number> | null>(
-        null
-    );
-    const [skillPositions, setskillPositions] = useState<Record<
-        string,
-        string[]
-    > | null>(null);
-    const [skillGrowth, setSkillGrowth] = useState<Record<
-        string,
-        string
-    > | null>(null);
-    const [searchTerm, setSearchTerm] = useState<string>("");
-    const [selectedSkill, setSelectedSkill] = useState<string | null>(null);
-    const [selectedSkillCount, setSelectedSkillCount] = useState<number | null>(
-        null
-    );
-    const [skillUp, setSkillUp] = useState<[string, number] | null>(null);
-    const [skillDown, setSkillDown] = useState<[string, number] | null>(null);
-    const [skillMonths, setSkillMonths] = useState<Record<
-        string,
-        Record<string, number>
-    > | null>(null);
-    const [sortByTrend, setSortByTrend] = useState<boolean>(false);
 
     useEffect(() => {
         async function init() {
@@ -103,19 +76,6 @@ const Home = () => {
             setChartSeries([
                 { name: "Mentions in Job Ads", data: Object.values(techData) },
             ]);
-
-            const {
-                topSkills,
-                skillRanks,
-                skillPositions,
-                skillGrowth,
-                skillMonths,
-            } = processingSkills(data);
-            setTopSkills(topSkills);
-            setSkillRanks(skillRanks);
-            setskillPositions(skillPositions);
-            setSkillGrowth(skillGrowth);
-            setSkillMonths(skillMonths);
         }
 
         init();
@@ -128,59 +88,6 @@ const Home = () => {
         const skillCountElement = document.getElementById("skillCount");
         animateCount(skillCountElement, skillCount, 3000, "skills found");
     }, [jobAdsCount, skillCount]);
-
-    const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setSearchTerm(e.target.value);
-    };
-
-    const toggleView = () => {
-        setShowChart(!showChart);
-    };
-
-    const handleCardClick = (skill: string, count: number) => {
-        const skillIndex = topSkills?.findIndex(([s]) => s === skill);
-        if (skillIndex !== undefined && skillIndex !== -1 && topSkills) {
-            const skillUp = topSkills[skillIndex - 1] || null;
-            const skillDown = topSkills[skillIndex + 1] || null;
-            setSelectedSkill(skill);
-            setSelectedSkillCount(count);
-            setSkillUp(skillUp);
-            setSkillDown(skillDown);
-        }
-    };
-
-    const handleCloseModal = () => {
-        setSelectedSkill(null);
-        setSelectedSkillCount(null);
-        setSkillUp(null);
-        setSkillDown(null);
-    };
-
-    const toggleSort = () => {
-        setSortByTrend((prevSortByTrend) => !prevSortByTrend);
-    };
-
-    const sortedSkills = topSkills
-        ? topSkills.slice().sort((a, b) => {
-              if (sortByTrend) {
-                  const growthA = skillGrowth?.[a[0]] || "0%";
-                  const growthB = skillGrowth?.[b[0]] || "0%";
-                  const growthValueA = parseFloat(growthA.replace("%", ""));
-                  const growthValueB = parseFloat(growthB.replace("%", ""));
-                  return growthValueB - growthValueA;
-              } else {
-                  return b[1] - a[1];
-              }
-          })
-        : [];
-
-    const filteredSkills = sortedSkills.filter(([skill]) => {
-        const searchTerms = searchTerm
-            .split(" ")
-            .map((term) => term.trim().toLowerCase());
-
-        return searchTerms.some((term) => skill.toLowerCase().includes(term));
-    });
 
     return (
         <div className="app">
@@ -205,30 +112,16 @@ const Home = () => {
             </div>
 
             <div className="flex flex-col items-center justify-center mx-auto mb-8 text-center animation glow delay-3 sm:flex-row">
-                <button
-                    onClick={toggleView}
-                    className="inline-flex items-center justify-center px-8 py-4 text-sm text-white bg-indigo-500 border border-2 border-indigo-500 rounded hover:bg-indigo-500 hover:shadow-lg"
-                >
-                    {showChart ? (
-                        <>
-                            <span className="mr-3">Search your skills</span>
-                            <img
-                                src="/assets/icons/search.svg"
-                                alt="arrow-right"
-                                className="w-5"
-                            />
-                        </>
-                    ) : (
-                        <>
-                            <img
-                                src="/assets/icons/arrow-right.svg"
-                                alt="arrow-right"
-                                className="w-5 transition-transform rotate-180"
-                            />
-                            <span className="ml-3">Back to chart view</span>
-                        </>
-                    )}
-                </button>
+                <Link to="/search">
+                    <button className="inline-flex items-center justify-center px-8 py-4 text-sm text-white bg-indigo-500 border border-2 border-indigo-500 rounded hover:bg-indigo-500 hover:shadow-lg">
+                        <span className="mr-3">Search your skills</span>
+                        <img
+                            src="/assets/icons/search.svg"
+                            alt="arrow-right"
+                            className="w-5"
+                        />
+                    </button>
+                </Link>
                 <Link to="/trends" className="mt-4 ml-0 sm:ml-8 sm:mt-0">
                     <button className="inline-flex items-center justify-center px-8 py-4 text-sm text-indigo-500 border border-2 border-indigo-300 rounded bg-indigo-50 hover:bg-indigo-50 hover:shadow-md">
                         View Trends
@@ -241,107 +134,13 @@ const Home = () => {
                 </Link>
             </div>
             <div className="max-w-screen-lg p-4 mx-auto mt-0 mb-40 animation glow delay-3">
-                {showChart ? (
-                    chartOptions &&
-                    chartSeries && (
-                        <Chart
-                            options={chartOptions}
-                            series={chartSeries}
-                            type="bar"
-                            height="5200"
-                        />
-                    )
-                ) : (
-                    <div>
-                        <div className="px-4 mb-4 text-center sm:px-0 animation glow delay-1">
-                            <input
-                                type="text"
-                                placeholder="React JavaScript"
-                                value={searchTerm}
-                                onChange={handleSearch}
-                                className="w-full max-w-sm p-3 border border-2 border-indigo-300 rounded-lg focus:outline-none focus:ring-2 hover:border-indigo-500 focus:ring-indigo-500 focus:border-transparent"
-                            />
-                        </div>
-                        <div className="mx-auto text-center animation glow delay-1">
-                            <p className="w-full mx-auto text-xs text-gray-500">
-                                Search multiple skills by separating them with a
-                                space
-                            </p>
-                            <button
-                                onClick={toggleSort}
-                                className="mt-8 inline-flex items-center justify-center px-8 py-4 text-sm text-white bg-indigo-500 border border-2 border-indigo-500 rounded hover:bg-indigo-500 hover:shadow-lg"
-                            >
-                                {sortByTrend
-                                    ? "Sort by Default"
-                                    : "Sort by Trend"}
-                                <img
-                                    src="/assets/icons/sort.svg"
-                                    alt="arrow-right"
-                                    className="w-5 ml-2"
-                                />
-                            </button>
-                        </div>
-                        <div className="grid max-w-screen-sm grid-cols-1 gap-4 px-4 mx-auto mt-8 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 mb-80 animation glow delay-1">
-                            {filteredSkills.map(([skill, count]) => (
-                                <div
-                                    key={skill}
-                                    className="flex items-start p-6 transition-shadow duration-200 bg-gray-100 border border-transparent shadow-md cursor-pointer rounded-xl hover:shadow-lg hover:border-indigo-300"
-                                    onClick={() =>
-                                        handleCardClick(skill, count)
-                                    }
-                                >
-                                    <div
-                                        className="pt-2 mr-10 text-3xl text-indigo-300"
-                                        style={{ minWidth: "32px" }}
-                                    >
-                                        {skillRanks && `#${skillRanks[skill]}`}
-                                    </div>
-                                    <div className="flex-grow">
-                                        <h3 className="text-lg text-indigo-500 sm:text-xl">
-                                            {skill}
-                                        </h3>
-                                        <p className="mt-1 text-sm text-black sm:text-sm">
-                                            {count} mentions
-                                        </p>
-                                    </div>
-                                    <div className="flex flex-col items-end justify-start ml-10">
-                                        <p className="mb-2 text-sm text-right text-black">
-                                            Trending
-                                        </p>
-                                        <p className="text-sm">
-                                            <span className="text-black"></span>{" "}
-                                            <span
-                                                className={
-                                                    skillGrowth &&
-                                                    skillGrowth[
-                                                        skill
-                                                    ].startsWith("+")
-                                                        ? "text-green-500 font-bold"
-                                                        : "text-red-500 font-bold"
-                                                }
-                                            >
-                                                {skillGrowth
-                                                    ? skillGrowth[skill]
-                                                    : "TBA"}
-                                            </span>
-                                        </p>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-                        {selectedSkill && selectedSkillCount !== null && (
-                            <Modal
-                                skill={selectedSkill}
-                                count={selectedSkillCount}
-                                skillRanks={skillRanks}
-                                skillPositions={skillPositions}
-                                skillUp={skillUp}
-                                skillDown={skillDown}
-                                skillMonths={skillMonths}
-                                onClose={handleCloseModal}
-                            />
-                        )}
-                    </div>
+                {chartOptions && chartSeries && (
+                    <Chart
+                        options={chartOptions}
+                        series={chartSeries}
+                        type="bar"
+                        height="5200"
+                    />
                 )}
             </div>
         </div>

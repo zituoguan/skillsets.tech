@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import Modal from "../components/Modal";
+import { useNavigate } from "react-router-dom";
 import countSkills from "../util/countSkills";
-import { animateCount } from "../util/animateCount";
 import processSkills from "../util/processingSkills";
+import { animateCount } from "../util/animateCount";
 
 async function getData() {
     const response = await fetch("/data/quality-assurance.json");
@@ -11,6 +11,7 @@ async function getData() {
 }
 
 const QualityAssurance = () => {
+    const navigate = useNavigate();
     const [jobAdsCount, setJobAdsCount] = useState(0);
     const [skillCount, setSkillCount] = useState(0);
     const [topSkills, setTopSkills] = useState<[string, number][] | null>(null);
@@ -22,12 +23,6 @@ const QualityAssurance = () => {
         string[]
     > | null>(null);
     const [searchTerm, setSearchTerm] = useState<string>("");
-    const [selectedSkill, setSelectedSkill] = useState<string | null>(null);
-    const [selectedSkillCount, setSelectedSkillCount] = useState<number | null>(
-        null
-    );
-    const [skillUp, setSkillUp] = useState<[string, number] | null>(null);
-    const [skillDown, setSkillDown] = useState<[string, number] | null>(null);
     const [skillMonths, setSkillMonths] = useState<Record<
         string,
         Record<string, number>
@@ -81,18 +76,19 @@ const QualityAssurance = () => {
         if (skillIndex !== undefined && skillIndex !== -1 && topSkills) {
             const skillUp = topSkills[skillIndex - 1] || null;
             const skillDown = topSkills[skillIndex + 1] || null;
-            setSelectedSkill(skill);
-            setSelectedSkillCount(count);
-            setSkillUp(skillUp);
-            setSkillDown(skillDown);
-        }
-    };
 
-    const handleCloseModal = () => {
-        setSelectedSkill(null);
-        setSelectedSkillCount(null);
-        setSkillUp(null);
-        setSkillDown(null);
+            navigate(`/skill/${skill}`, {
+                state: {
+                    skill,
+                    count,
+                    skillRanks,
+                    skillPositions,
+                    skillUp,
+                    skillDown,
+                    skillMonths,
+                },
+            });
+        }
     };
 
     const toggleSort = () => {
@@ -126,8 +122,7 @@ const QualityAssurance = () => {
             <header className="p-4 pt-40 mb-8 text-center animation glow delay-1">
                 <h2 className="mt-10 text-4xl font-bold">
                     Discover the most wanted{" "}
-                    <span className="text-indigo-500"> Quality Assurance </span>{" "}
-                    skills
+                    <span className="text-indigo-500"> Quality Assurance </span> skills
                 </h2>
                 <h2 className="p-8 mt-4 text-xl sm:p-4">
                     Browse skills required for your job position
@@ -146,7 +141,7 @@ const QualityAssurance = () => {
             <div className="px-4 mb-4 text-center sm:px-0 animation glow delay-3">
                 <input
                     type="text"
-                    placeholder="Postman Jenkins"
+                    placeholder="React JavaScript"
                     value={searchTerm}
                     onChange={handleSearch}
                     className="w-full max-w-sm p-3 border border-2 border-indigo-300 rounded-lg hover:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
@@ -210,18 +205,6 @@ const QualityAssurance = () => {
                     </div>
                 ))}
             </div>
-            {selectedSkill && selectedSkillCount !== null && (
-                <Modal
-                    skill={selectedSkill}
-                    count={selectedSkillCount}
-                    skillRanks={skillRanks}
-                    skillPositions={skillPositions}
-                    skillUp={skillUp}
-                    skillDown={skillDown}
-                    skillMonths={skillMonths}
-                    onClose={handleCloseModal}
-                />
-            )}
         </div>
     );
 };

@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import Modal from "../components/Modal";
+import { useNavigate } from "react-router-dom";
 import countSkills from "../util/countSkills";
-import { animateCount } from "../util/animateCount";
 import processSkills from "../util/processingSkills";
+import { animateCount } from "../util/animateCount";
 
 async function getData() {
     const response = await fetch("/data/project-management.json");
@@ -11,6 +11,7 @@ async function getData() {
 }
 
 const Management = () => {
+    const navigate = useNavigate();
     const [jobAdsCount, setJobAdsCount] = useState(0);
     const [skillCount, setSkillCount] = useState(0);
     const [topSkills, setTopSkills] = useState<[string, number][] | null>(null);
@@ -22,12 +23,6 @@ const Management = () => {
         string[]
     > | null>(null);
     const [searchTerm, setSearchTerm] = useState<string>("");
-    const [selectedSkill, setSelectedSkill] = useState<string | null>(null);
-    const [selectedSkillCount, setSelectedSkillCount] = useState<number | null>(
-        null
-    );
-    const [skillUp, setSkillUp] = useState<[string, number] | null>(null);
-    const [skillDown, setSkillDown] = useState<[string, number] | null>(null);
     const [skillMonths, setSkillMonths] = useState<Record<
         string,
         Record<string, number>
@@ -81,18 +76,19 @@ const Management = () => {
         if (skillIndex !== undefined && skillIndex !== -1 && topSkills) {
             const skillUp = topSkills[skillIndex - 1] || null;
             const skillDown = topSkills[skillIndex + 1] || null;
-            setSelectedSkill(skill);
-            setSelectedSkillCount(count);
-            setSkillUp(skillUp);
-            setSkillDown(skillDown);
-        }
-    };
 
-    const handleCloseModal = () => {
-        setSelectedSkill(null);
-        setSelectedSkillCount(null);
-        setSkillUp(null);
-        setSkillDown(null);
+            navigate(`/skill/${skill}`, {
+                state: {
+                    skill,
+                    count,
+                    skillRanks,
+                    skillPositions,
+                    skillUp,
+                    skillDown,
+                    skillMonths,
+                },
+            });
+        }
     };
 
     const toggleSort = () => {
@@ -209,18 +205,6 @@ const Management = () => {
                     </div>
                 ))}
             </div>
-            {selectedSkill && selectedSkillCount !== null && (
-                <Modal
-                    skill={selectedSkill}
-                    count={selectedSkillCount}
-                    skillRanks={skillRanks}
-                    skillPositions={skillPositions}
-                    skillUp={skillUp}
-                    skillDown={skillDown}
-                    skillMonths={skillMonths}
-                    onClose={handleCloseModal}
-                />
-            )}
         </div>
     );
 };
