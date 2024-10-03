@@ -15,6 +15,8 @@ import Mid from "./pages/seniority/Mid";
 import Senior from "./pages/seniority/Senior";
 import Trends from "./pages/Trends";
 import SkillJobs from "./pages/SkillJobs";
+import Skill from "./pages/Skill";
+import Search from "./pages/Search";
 import ScrollToTop from "./util/scroll";
 
 function App() {
@@ -24,6 +26,9 @@ function App() {
             <ScrollToTop />
             <Routes>
                 <Route path="/" element={<Home />} />
+                <Route path="/search" element={<Search />} />
+                {/* skill */}
+                <Route path="/skill/:skill" element={<Skill />} />
                 {/* positions */}
                 <Route path="/frontend" element={<Frontend />} />
                 <Route path="/backend" element={<Backend />} />
@@ -31,7 +36,9 @@ function App() {
                 <Route path="/data" element={<Data />} />
                 <Route path="/full-stack" element={<FullStack />} />
                 <Route path="/design" element={<Design />} />
-                <Route path="/quality-assurance" element={<QualityAssurance />}
+                <Route
+                    path="/quality-assurance"
+                    element={<QualityAssurance />}
                 />
                 <Route path="/mobile" element={<Mobile />} />
                 <Route path="/management" element={<Management />} />
