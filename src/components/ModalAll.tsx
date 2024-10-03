@@ -40,66 +40,61 @@ const Modal: React.FC<ModalProps> = ({
                     <div className="mb-4 sm:text-sm text-xs text-black">
                         <p className="mb-2 font-bold">📈 Trending by month</p>
                         <ul>
-                            {Object.entries(skillMonths[skill])
-                                .sort(([monthA], [monthB]) => {
-                                    const monthsOrder = [
-                                        "january",
-                                        "february",
-                                        "march",
-                                        "april",
-                                        "may",
-                                        "june",
-                                        "july",
-                                        "august",
-                                        "september",
-                                        "october",
-                                        "november",
-                                        "december",
-                                    ];
-                                    return (
-                                        monthsOrder.indexOf(monthA) -
-                                        monthsOrder.indexOf(monthB)
-                                    );
-                                })
-                                .map(([month, mentions], index, arr) => {
-                                    const previousMonthMentions =
-                                        index > 0 ? arr[index - 1][1] : 0;
-                                    const percentageDifference =
-                                        index > 0
-                                            ? calculatePercentageDifference(
-                                                  mentions,
-                                                  previousMonthMentions
-                                              )
-                                            : "TBA";
+                            {[
+                                "june",
+                                "july",
+                                "august",
+                                "september",
+                                "october",
+                            ].map((month, index, monthsArray) => {
+                                const mentions = skillMonths[skill][month] || 0;
+                                const previousMonthMentions =
+                                    index > 0
+                                        ? skillMonths[skill][
+                                              monthsArray[index - 1]
+                                          ] || 0
+                                        : 0;
 
-                                    return (
-                                        <li
-                                            key={index}
-                                            className="mb-2 sm:text-sm text-xs"
-                                        >
-                                            {month.charAt(0).toUpperCase() +
-                                                month.slice(1)}
-                                            :{" "}
-                                            <span className="font-bold text-indigo-500">
-                                                {mentions}
-                                            </span>{" "}
-                                            mentions{" "}
-                                            {percentageDifference !== "TBA" && (
-                                                <span
-                                                    className={`${
-                                                        percentageDifference.startsWith(
-                                                            "+"
-                                                        )
-                                                            ? "text-green-500 p-1 bg-indigo-50 rounded font-bold"
-                                                            : "text-red-500 p-1 bg-indigo-50 rounded font-bold"
-                                                    } ml-2`}
-                                                >
-                                                    {percentageDifference}
-                                                </span>
-                                            )}
-                                        </li>
-                                    );
-                                })}
+                                const percentageDifference =
+                                    index > 0 &&
+                                    previousMonthMentions === 0 &&
+                                    mentions > 0
+                                        ? "+100%"
+                                        : index > 0
+                                        ? calculatePercentageDifference(
+                                              mentions,
+                                              previousMonthMentions
+                                          )
+                                        : "TBA";
+
+                                return (
+                                    <li
+                                        key={index}
+                                        className="mb-2 sm:text-sm text-xs"
+                                    >
+                                        {month.charAt(0).toUpperCase() +
+                                            month.slice(1)}
+                                        :{" "}
+                                        <span className="font-bold text-indigo-500">
+                                            {mentions}
+                                        </span>{" "}
+                                        mentions{" "}
+                                        {percentageDifference !== "TBA" && (
+                                            <span
+                                                className={`${
+                                                    percentageDifference.startsWith(
+                                                        "+"
+                                                    )
+                                                        ? "text-green-500 p-1 bg-indigo-50 rounded font-bold"
+                                                        : "text-red-500 p-1 bg-indigo-50 rounded font-bold"
+                                                } ml-2`}
+                                            >
+                                                {percentageDifference}
+                                            </span>
+                                        )}
+                                    </li>
+                                );
+                            })}
                         </ul>
                     </div>
                 )}
