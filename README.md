@@ -10,16 +10,16 @@ You can browse through a variety of IT departments to explore the skills require
 
 | **Departments**                                                         | **Job Advertisements Analyzed** | **Skills Found**  |
 | ----------------------------------------------------------------------- |---------------------------------|-------------------|
-| **[All](https://skillsets.vercel.app/)**                                | **1201**                        | **161**           |
-| **[Frontend](https://skillsets.vercel.app/frontend)**                   | 207                             | 52                |
-| **[Backend](https://skillsets.vercel.app/backend)**                     | 243                             | 64                |
-| **[DevOps](https://skillsets.vercel.app/devops)**                       | 92                              | 32                |
-| **[Data](https://skillsets.vercel.app/data)**                           | 136                             | 18                |
-| **[Full Stack](https://skillsets.vercel.app/full-stack)**               | 118                             | 49                |
-| **[Backend](https://skillsets.vercel.app/backend)**                     | 67                              | 13                |
-| **[UX/UI](https://skillsets.vercel.app/design)**                        | 119                             | 30                |
-| **[iOS/Android](https://skillsets.vercel.app/mobile)**                  | 26                              | 15                |
-| **[Management](https://skillsets.vercel.app/management)**               | 110                             | 22                |
+| **[All](https://skillsets.vercel.app/)**                                | **1383**                        | **170**           |
+| **[Frontend](https://skillsets.vercel.app/frontend)**                   | 216                             | 52                |
+| **[Backend](https://skillsets.vercel.app/backend)**                     | 278                             | 67                |
+| **[DevOps](https://skillsets.vercel.app/devops)**                       | 133                             | 33                |
+| **[Data](https://skillsets.vercel.app/data)**                           | 180                             | 18                |
+| **[Full Stack](https://skillsets.vercel.app/full-stack)**               | 148                             | 52                |
+| **[Backend](https://skillsets.vercel.app/backend)**                     | 74                              | 13                |
+| **[UX/UI](https://skillsets.vercel.app/design)**                        | 151                             | 30                |
+| **[iOS/Android](https://skillsets.vercel.app/mobile)**                  | 28                              | 15                |
+| **[Management](https://skillsets.vercel.app/management)**               | 122                             | 22                |
 | **[Junior](https://skillsets.vercel.app/junior)**                       | 35                              | 29                |
 | **[Medium (Mid)](https://skillsets.vercel.app/mid)**                    | 84                              | 77                |
 | **[Senior](https://skillsets.vercel.app/senior)**                       | 58                              | 74                |
