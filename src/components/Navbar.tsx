@@ -163,7 +163,7 @@ const Navbar: React.FC = () => {
                         <p className="mr-2 text-xs text-gray-500 sm:text-sm">
                             Last updated
                             <br />
-                            01/10/2024
+                            03/10/2024
                         </p>
                     </a>
                     <button
