@@ -1,37 +1,37 @@
-function calculateDifference(current: number, previous: number): string {
-    if (previous === 0) return "TBA";
-    const difference = ((current - previous) / previous) * 100;
-    const roundedDifference = Math.round(difference * 100) / 100;
-    return roundedDifference > 0
-        ? `+${roundedDifference}%`
-        : `${roundedDifference}%`;
+function calculateDifference(current: number, previous: number): number {
+    if (previous === 0) return NaN;
+    return ((current - previous) / previous) * 100;
 }
 
 export function calculateGrowth(mentionsByMonth: Record<string, number>): string {
-    const months = Object.keys(mentionsByMonth).sort((a, b) => {
-        const monthsOrder = [
-            "january",
-            "february",
-            "march",
-            "april",
-            "may",
-            "june",
-            "july",
-            "august",
-            "september",
-            "october",
-            "november",
-            "december",
-        ];
-        return monthsOrder.indexOf(a) - monthsOrder.indexOf(b);
-    });
+    const monthsOrder = [
+        "june",
+        "july",
+        "august",
+        "september",
+        "october",
+    ];
 
-    if (months.length < 2) return "TBA";
+    const mentionsWithAllMonths = monthsOrder.map((month) => ({
+        month,
+        mentions: mentionsByMonth[month] || 0,
+    }));
 
-    const firstMonthMentions = mentionsByMonth[months[0]];
-    const lastMonthMentions = mentionsByMonth[months[months.length - 1]];
+    const totalMentions = mentionsWithAllMonths.reduce((sum, { mentions }) => sum + mentions, 0);
+    if (totalMentions === 0) return "TBA";
 
-    return calculateDifference(lastMonthMentions, firstMonthMentions);
+    const firstMonthMentions = mentionsWithAllMonths[0].mentions;
+    const lastMonthMentions = mentionsWithAllMonths[mentionsWithAllMonths.length - 1].mentions;
+
+    const overallGrowth = calculateDifference(lastMonthMentions, firstMonthMentions);
+
+    if (isNaN(overallGrowth)) {
+        return "TBA";
+    }
+
+    const roundedGrowth = Math.round(overallGrowth * 100) / 100;
+
+    return roundedGrowth > 0 ? `+${roundedGrowth}%` : `${roundedGrowth}%`;
 }
 
 export default function processSkills(
@@ -96,6 +96,6 @@ export default function processSkills(
         topSkills: sortedSkills.slice(0, 100),
         skillMonths,
         skillGrowth,
-        calculateGrowth
+        calculateGrowth,
     };
 }
