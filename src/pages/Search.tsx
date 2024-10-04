@@ -143,7 +143,7 @@ const SearchPage = () => {
                     onClick={toggleSort}
                     className="mt-8 inline-flex items-center justify-center px-8 py-4 text-sm text-white bg-indigo-500 border border-2 border-indigo-500 rounded hover:bg-indigo-500 hover:shadow-lg"
                 >
-                    {sortByTrend ? "Sort by Default" : "Sort by Trending"}
+                    {sortByTrend ? "Sort by Count" : "Sort by Trend"}
                     <img
                         src="/assets/icons/sort.svg"
                         alt="arrow-right"
