@@ -122,7 +122,8 @@ const QualityAssurance = () => {
             <header className="p-4 pt-40 mb-8 text-center animation glow delay-1">
                 <h2 className="mt-10 text-4xl font-bold">
                     Discover the most wanted{" "}
-                    <span className="text-indigo-500"> Quality Assurance </span> skills
+                    <span className="text-indigo-500"> Quality Assurance </span>{" "}
+                    skills
                 </h2>
                 <h2 className="p-8 mt-4 text-xl sm:p-4">
                     Browse skills required for your job position
@@ -148,7 +149,7 @@ const QualityAssurance = () => {
                 />
             </div>
             <div className="mx-auto text-center animation glow delay-3">
-                <p className="w-full mx-auto text-xs text-gray-500">
+                <p className="w-full mx-auto text-xs text-gray-500 p-8">
                     Search multiple skills by separating them with a space
                 </p>
                 <button
