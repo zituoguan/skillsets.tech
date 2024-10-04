@@ -136,7 +136,7 @@ const SearchPage = () => {
                 />
             </div>
             <div className="mx-auto text-center animation glow delay-3">
-                <p className="w-full mx-auto text-xs text-gray-500">
+                <p className="w-full mx-auto text-xs text-gray-500 px-8">
                     Search multiple skills by separating them with a space
                 </p>
                 <button
