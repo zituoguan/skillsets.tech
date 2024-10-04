@@ -62,7 +62,7 @@ const Trends = () => {
                 </form>
             </div>
             <div className="max-w-lg px-4 mx-auto mt-4 text-center animation glow delay-2 sm:px-0">
-                <p className="w-full mx-auto text-xs text-gray-500 p-8">
+                <p className="w-full mx-auto text-xs text-gray-500 px-8">
                     Search multiple skills by separating them with a space
                 </p>
             </div>
