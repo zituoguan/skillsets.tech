@@ -144,13 +144,13 @@ const Navbar: React.FC = () => {
     };
 
     return (
-        <nav className="fixed top-0 z-20 w-full py-3 bg-white border-gray-200 start-0 sm:py-1">
+        <nav className="fixed top-0 z-20 w-full py-3 bg-[rgba(11,11,11,0.8)] backdrop-blur-lg border-gray-200 start-0 sm:py-1">
             <div className="flex flex-wrap items-center justify-between max-w-screen-xl p-4 mx-auto">
                 <Link
                     to="/"
                     className="flex items-center space-x-3 rtl:space-x-reverse"
                 >
-                    <h1 className="self-center text-3xl font-bold sm:text-4xl whitespace-nowrap">
+                    <h1 className="self-center text-3xl text-white font-bold sm:text-4xl whitespace-nowrap">
                         Skill<span className="text-indigo-500">Sets</span>
                     </h1>
                 </Link>
@@ -160,7 +160,7 @@ const Navbar: React.FC = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        <p className="mr-2 text-xs text-gray-500 sm:text-sm">
+                        <p className="mr-2 text-xs text-white sm:text-sm">
                             Last updated
                             <br />
                             04/10/2024
@@ -168,13 +168,13 @@ const Navbar: React.FC = () => {
                     </a>
                     <button
                         type="button"
-                        className="inline-flex items-center justify-center w-10 h-10 p-2 text-sm text-black border rounded-lg md:hidden focus:outline-none focus:ring-1 focus:ring-indigo-300 border-indigo-50"
+                        className="inline-flex items-center justify-center p-2 text-sm text-black rounded-lg md:hidden focus:outline-none"
                         onClick={toggleNavbar}
                     >
                         <img
                             src="/assets/icons/menu.svg"
                             alt="menu"
-                            className="w-6 h-6 sm:w-7 sm:h-7"
+                            className="w-8 h-8"
                         />
                     </button>
                 </div>
