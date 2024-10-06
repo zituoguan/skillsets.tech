@@ -128,7 +128,7 @@ const Backend = () => {
                     Browse skills required for your job position
                 </h2>
             </header>
-            <div className="flex flex-col items-center justify-center mt-16 mb-16 sm:flex-row animation glow delay-2">
+            <div className="flex flex-col items-center justify-center mt-16 mb-16 sm:flex-row animation glow delay-1">
                 <div
                     id="jobAdsCount"
                     className="text-2xl font-semibold text-center sm:mr-10"
@@ -147,7 +147,7 @@ const Backend = () => {
                     className="w-full max-w-sm p-3 border border-2 border-indigo-300 rounded-lg hover:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
                 />
             </div>
-            <div className="mx-auto text-center animation glow delay-3">
+            <div className="mx-auto text-center animation glow delay-1">
                 <p className="w-full mx-auto text-xs text-gray-500 px-8">
                     Search multiple skills by separating them with a space
                 </p>

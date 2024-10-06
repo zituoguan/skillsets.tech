@@ -43,7 +43,7 @@ const SkillJobs = () => {
                     View analyzed job advertisements
                 </h2>
             </header>
-            <div className="flex flex-col items-center justify-center mx-auto mb-8 text-center animation glow delay-2 sm:flex-row">
+            <div className="flex flex-col items-center justify-center mx-auto mb-8 text-center animation glow delay-1 sm:flex-row">
                 <Link to="/" className="mt-4 ml-0 sm:ml-8 sm:mt-0">
                     <button className="inline-flex items-center justify-center px-8 py-4 text-sm text-white bg-indigo-500 border border-2 border-indigo-500 rounded hover:bg-indigo-500 hover:shadow-lg">
                         <img
@@ -55,7 +55,7 @@ const SkillJobs = () => {
                     </button>
                 </Link>
             </div>
-            <div className="max-w-screen-lg p-4 mx-auto mt-0 mb-40 animation glow delay-3">
+            <div className="max-w-screen-lg p-4 mx-auto mt-0 mb-40 animation glow delay-2">
                 {filteredJobs.length > 0 ? (
                     <>
                         <p className="mb-8 text-center text-md">

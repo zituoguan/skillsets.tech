@@ -109,7 +109,7 @@ const TrendsData = ({ skills }: { skills: string[] | null }) => {
                         </span>
                     ))}
             </p>
-            <div className="max-w-screen-xl p-4 mx-auto mb-40 animation glow delay-1">
+            <div className="max-w-screen-xl p-4 mx-auto mb-40 animation glow delay-2">
                 {chartOptions && chartSeries && (
                     <Chart
                         options={chartOptions}

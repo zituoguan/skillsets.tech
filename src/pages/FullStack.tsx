@@ -128,7 +128,7 @@ const FullStack = () => {
                     Browse skills required for your job position
                 </h2>
             </header>
-            <div className="flex flex-col items-center justify-center mt-16 mb-16 sm:flex-row animation glow delay-2">
+            <div className="flex flex-col items-center justify-center mt-16 mb-16 sm:flex-row animation glow delay-1">
                 <div
                     id="jobAdsCount"
                     className="text-2xl font-semibold text-center sm:mr-10"
@@ -138,7 +138,7 @@ const FullStack = () => {
                     className="mt-5 text-2xl font-semibold text-center sm:ml-10 sm:mt-0"
                 ></div>
             </div>
-            <div className="px-4 mb-4 text-center sm:px-0 animation glow delay-3">
+            <div className="px-4 mb-4 text-center sm:px-0 animation glow delay-1">
                 <input
                     type="text"
                     placeholder="React JavaScript"

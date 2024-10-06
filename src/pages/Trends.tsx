@@ -37,7 +37,7 @@ const Trends = () => {
                     Browse skill trends by month and number of mentions
                 </h2>
             </header>
-            <div className="max-w-sm px-4 mx-auto text-center animation glow delay-2 sm:px-0">
+            <div className="max-w-sm px-4 mx-auto text-center animation glow delay-1 sm:px-0">
                 <form
                     onSubmit={handleSearch}
                     className="inline-flex w-full mx-auto text-center "
@@ -61,7 +61,7 @@ const Trends = () => {
                     </button>
                 </form>
             </div>
-            <div className="max-w-lg px-4 mx-auto mt-4 text-center animation glow delay-2 sm:px-0">
+            <div className="max-w-lg px-4 mx-auto mt-4 text-center animation glow delay-1 sm:px-0">
                 <p className="w-full mx-auto text-xs text-gray-500 px-8">
                     Search multiple skills by separating them with a space
                 </p>
