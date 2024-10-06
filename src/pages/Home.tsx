@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Chart from "react-apexcharts";
+import Footer from "../components/Footer";
 import countSkills from "../util/countSkills";
 import processSkills from "../util/processSkills";
 import { animateCount } from "../util/animateCount";
@@ -143,6 +144,7 @@ const Home = () => {
                     />
                 )}
             </div>
+            <Footer />
         </div>
     );
 };
