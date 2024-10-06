@@ -80,7 +80,7 @@ const SkillJobs = () => {
                                 >
                                     <div className="flex-grow">
                                         <h3 className="text-lg sm:text-xl">
-                                            Job Skill:{" "}
+                                            Skill Found:{" "}
                                             <span className="text-indigo-500">
                                                 {skill}
                                             </span>

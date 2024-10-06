@@ -97,7 +97,7 @@ const TrendsData = ({ skills }: { skills: string[] | null }) => {
     }, [skills]);
 
     return (
-        <div className="app animation glow delay-3">
+        <div className="app animation glow delay-2">
             <p className="max-w-screen-sm mx-auto mt-10 text-sm text-center">
                 {skills &&
                     skills.map((skill, index) => (

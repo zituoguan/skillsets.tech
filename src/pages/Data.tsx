@@ -138,7 +138,7 @@ const Data = () => {
                     className="mt-5 text-2xl font-semibold text-center sm:ml-10 sm:mt-0"
                 ></div>
             </div>
-            <div className="px-4 mb-4 text-center sm:px-0 animation glow delay-3">
+            <div className="px-4 mb-4 text-center sm:px-0 animation glow delay-1">
                 <input
                     type="text"
                     placeholder="React JavaScript"
@@ -147,7 +147,7 @@ const Data = () => {
                     className="w-full max-w-sm p-3 border border-2 border-indigo-300 rounded-lg hover:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
                 />
             </div>
-            <div className="mx-auto text-center animation glow delay-3">
+            <div className="mx-auto text-center animation glow delay-1">
                 <p className="w-full mx-auto text-xs text-gray-500 px-8">
                     Search multiple skills by separating them with a space
                 </p>
@@ -163,7 +163,7 @@ const Data = () => {
                     />
                 </button>
             </div>
-            <div className="grid max-w-screen-sm grid-cols-1 gap-4 px-4 mx-auto mt-8 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 mb-80 animation glow delay-3">
+            <div className="grid max-w-screen-sm grid-cols-1 gap-4 px-4 mx-auto mt-8 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 mb-80 animation glow delay-1">
                 {filteredSkills.map(([skill, count]) => (
                     <div
                         key={skill}
