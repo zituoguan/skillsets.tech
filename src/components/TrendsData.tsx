@@ -53,7 +53,7 @@ const TrendsData = ({ skills }: { skills: string[] | null }) => {
                     title: {
                         text: "Months",
                         style: {
-                            fontSize: "16px",
+                            fontSize: "14px",
                             fontFamily: "JetBrains Mono",
                         },
                     },
@@ -66,7 +66,7 @@ const TrendsData = ({ skills }: { skills: string[] | null }) => {
                     title: {
                         text: "Number of Mentions",
                         style: {
-                            fontSize: "16px",
+                            fontSize: "14px",
                             fontFamily: "JetBrains Mono",
                         },
                     },
