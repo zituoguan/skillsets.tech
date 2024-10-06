@@ -79,12 +79,20 @@ const Skill = () => {
     }, [skillMonths, skill]);
 
     return (
-        <div className="mx-auto my-40 animation glow delay-1">
-            <div className="mx-auto w-full max-w-screen-md px-10 pt-8 pb-5 sm:px-12 sm:pt-12 sm:pb-8 bg-white rounded-lg shadow-xl">
-                <h2 className="mb-4 text-3xl font-bold text-indigo-500">
+        <div className="mx-auto my-32 animation glow delay-1">
+            <div className="mx-auto w-full max-w-screen-md px-10 pt-8 pb-5 sm:px-12 sm:pt-8 sm:pb-8 bg-white rounded-lg shadow-xl">
+                <div>
+                    <button
+                        onClick={() => navigate(-1)}
+                        className="text-sm text-gray-500 border rounded px-3 py-1 hover:bg-gray-100"
+                    >
+                        ←
+                    </button>
+                </div>
+                <h2 className="mt-4 mb-4 text-3xl font-bold text-indigo-500">
                     {skill}
                 </h2>
-                <p className="mb-2 text-md font-bold text-black">
+                <p className="mb-2 text-md text-black">
                     Ranked:{" "}
                     <span className="font-bold text-indigo-500 mr-8">
                         {skillRanks && `#${skillRanks[skill]}`}
@@ -251,15 +259,6 @@ const Skill = () => {
                         {skill} Jobs
                     </button>
                 </Link>
-
-                <div>
-                    <button
-                        onClick={() => navigate(-1)}
-                        className="text-sm mt-8 text-gray-500 border rounded px-3 py-1 hover:bg-gray-100"
-                    >
-                        ← back
-                    </button>
-                </div>
             </div>
         </div>
     );
