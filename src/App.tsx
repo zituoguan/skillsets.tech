@@ -18,7 +18,6 @@ import SkillJobs from "./pages/SkillJobs";
 import Skill from "./pages/Skill";
 import Search from "./pages/Search";
 import ScrollToTop from "./util/scroll";
-import Footer from "./components/Footer";
 
 function App() {
     return (
@@ -52,7 +51,6 @@ function App() {
                 {/* jobs */}
                 <Route path="/jobs/:skill" element={<SkillJobs />} />
             </Routes>
-            <Footer />
         </Router>
     );
 }
