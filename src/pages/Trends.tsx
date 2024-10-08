@@ -46,7 +46,7 @@ const Trends = () => {
                         type="text"
                         value={inputValue}
                         onChange={handleInputChange}
-                        placeholder="Python JavaScript"
+                        placeholder="python javascript"
                         className="w-full p-3 border border-2 border-indigo-300 rounded-lg focus:outline-none focus:ring-2 hover:border-indigo-500 focus:ring-indigo-500 focus:border-transparent"
                     />
                     <button

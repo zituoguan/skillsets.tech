@@ -141,7 +141,7 @@ const Junior = () => {
             <div className="px-4 mb-4 text-center sm:px-0 animation glow delay-3">
                 <input
                     type="text"
-                    placeholder="React JavaScript"
+                    placeholder="react javascript"
                     value={searchTerm}
                     onChange={handleSearch}
                     className="w-full max-w-sm p-3 border border-2 border-indigo-300 rounded-lg hover:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"

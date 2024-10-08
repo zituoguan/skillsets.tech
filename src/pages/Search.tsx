@@ -129,7 +129,7 @@ const SearchPage = () => {
             <div className="px-4 mb-4 text-center sm:px-0 animation glow delay-1">
                 <input
                     type="text"
-                    placeholder="React JavaScript"
+                    placeholder="react javascript"
                     value={searchTerm}
                     onChange={handleSearch}
                     className="w-full max-w-sm p-3 border border-2 border-indigo-300 rounded-lg focus:outline-none focus:ring-2 hover:border-indigo-500 focus:ring-indigo-500 focus:border-transparent"
