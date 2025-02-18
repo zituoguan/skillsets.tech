@@ -108,8 +108,8 @@ export default function Search() {
       <header className="mt-48 text-center animation glow delay-1">
         <h2 className="p-4 text-4xl font-bold sm:p-0">
           The most wanted{" "}
-          <span className="font-bold text-indigo-500">Cybersecurity</span> skills by
-          recruiters
+          <span className="font-bold text-indigo-500">Cybersecurity</span>{" "}
+          skills by recruiters
         </h2>
         <h2 className="p-4 mt-8 text-xl sm:p-0">
           Browse skills required for your job position
@@ -163,7 +163,7 @@ export default function Search() {
                 href={`/cybersecurity/skill/${encodeURIComponent(skill.skill)}`}
                 key={skill.skill}
               >
-                <div className="flex items-center p-4 border border-gray-300 rounded-lg shadow-md hover:shadow-lg bg-indigo-50">
+                <div className="flex items-center p-4 border border-gray-300 rounded-lg shadow-md hover:shadow-lg bg-indigo-50 hover:border hover:border-indigo-500">
                   <div className="flex items-center justify-center text-xl font-bold text-white bg-indigo-500 rounded-full w-13 h-13">
                     #{skill.rank}
                   </div>

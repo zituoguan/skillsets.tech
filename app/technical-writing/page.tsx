@@ -167,7 +167,7 @@ export default function Search() {
                 )}`}
                 key={skill.skill}
               >
-                <div className="flex items-center p-4 border border-gray-300 rounded-lg shadow-md hover:shadow-lg bg-indigo-50">
+                <div className="flex items-center p-4 border border-gray-300 rounded-lg shadow-md hover:shadow-lg bg-indigo-50 hover:border hover:border-indigo-500">
                   <div className="flex items-center justify-center text-xl font-bold text-white bg-indigo-500 rounded-full w-13 h-13">
                     #{skill.rank}
                   </div>
