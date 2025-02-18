@@ -115,7 +115,7 @@ export default function Search() {
 
       <div className="mx-auto mt-4 text-center animation glow delay-1">
         <p className="mb-4 text-sm">Or search by job position</p>
-        <div className="flex flex-wrap justify-center max-w-screen-sm gap-2 mx-auto">
+        <div className="flex flex-wrap justify-center max-w-screen-sm gap-2 mx-auto sm:p-0 p-2">
           <Link href="/frontend">
             <div className="px-3 py-2 text-xs text-indigo-500 border border-2 border-indigo-300 rounded bg-indigo-50 hover:bg-indigo-50 hover:shadow-md">
               <p>Frontend</p>
@@ -129,6 +129,11 @@ export default function Search() {
           <Link href="/devops">
             <div className="px-3 py-2 text-xs text-indigo-500 border border-2 border-indigo-300 rounded bg-indigo-50 hover:bg-indigo-50 hover:shadow-md">
               <p>DevOps</p>
+            </div>
+          </Link>
+          <Link href="/ai-ml">
+            <div className="px-3 py-2 text-xs text-indigo-500 border border-2 border-indigo-300 rounded bg-indigo-50 hover:bg-indigo-50 hover:shadow-md">
+              <p>AI/ML</p>
             </div>
           </Link>
           <Link href="/data">
@@ -146,6 +151,11 @@ export default function Search() {
               <p>UX / UI</p>
             </div>
           </Link>
+          <Link href="/technical-writing">
+            <div className="px-3 py-2 text-xs text-indigo-500 border border-2 border-indigo-300 rounded bg-indigo-50 hover:bg-indigo-50 hover:shadow-md">
+              <p>Technical Writing</p>
+            </div>
+          </Link>
           <Link href="/quality-assurance">
             <div className="px-3 py-2 text-xs text-indigo-500 border border-2 border-indigo-300 rounded bg-indigo-50 hover:bg-indigo-50 hover:shadow-md">
               <p>Quality Assurance</p>
@@ -159,6 +169,11 @@ export default function Search() {
           <Link href="/management">
             <div className="px-3 py-2 text-xs text-indigo-500 border border-2 border-indigo-300 rounded bg-indigo-50 hover:bg-indigo-50 hover:shadow-md">
               <p>Project Management</p>
+            </div>
+          </Link>
+          <Link href="/cybersecurity">
+            <div className="px-3 py-2 text-xs text-indigo-500 border border-2 border-indigo-300 rounded bg-indigo-50 hover:bg-indigo-50 hover:shadow-md">
+              <p>Cybersecurity</p>
             </div>
           </Link>
         </div>
