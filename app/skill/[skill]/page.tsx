@@ -222,7 +222,7 @@ export default function SkillDetail() {
 
   return (
     <div className="max-w-screen-sm p-8 mx-auto mt-32 mb-40 bg-white border border-indigo-100 shadow shadow-indigo-100">
-      <Link href="/search">
+      <Link href="/">
         <button className="px-3 py-1 mb-4 text-sm text-gray-500 border rounded hover:bg-gray-100">
           ←
         </button>
