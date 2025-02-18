@@ -68,6 +68,9 @@ export default function Home() {
             dynamicAnimation: { enabled: true, speed: 1000 },
           },
         },
+        dataLabels: {
+          enabled: false,
+        },
         xaxis: {
           categories: sortedSkillNames,
           labels: {
