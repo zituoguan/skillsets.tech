@@ -46,6 +46,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-562CWBQ2');`,
           }}
         />
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-HPGDHZTLKZ"
+        ></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-HPGDHZTLKZ');
+            `,
+          }}
+        />
         <Script
           src="https://unpkg.com/@tailwindcss/browser@4"
           strategy="beforeInteractive"
