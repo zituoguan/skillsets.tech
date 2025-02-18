@@ -189,7 +189,7 @@ export default function SkillDetail() {
     tooltip: {
       enabled: true,
       marker: {
-        fillColors: ["#6875F5"],
+        show: false,
       },
     },
   };
