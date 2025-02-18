@@ -1,0 +1,69 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "JetBrains Mono", system-ui;
+  /* disable user select */
+  /* user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none; */
+  /* background */
+  --dot-bg: #f9f9f9;
+  --dot-color: #333;
+  --dot-size: 1px;
+  --dot-space: 32px;
+  background: linear-gradient(
+        90deg,
+        var(--dot-bg) calc(var(--dot-space) - var(--dot-size)),
+        transparent 1%
+      )
+      center / var(--dot-space) var(--dot-space),
+    linear-gradient(
+        var(--dot-bg) calc(var(--dot-space) - var(--dot-size)),
+        transparent 1%
+      )
+      center / var(--dot-space) var(--dot-space),
+    var(--dot-color);
+}
+
+/* animation */
+.animation {
+  animation-duration: 0.5s;
+  animation-delay: 0.5s;
+  animation-name: animation;
+  animation-timing-function: cubic-bezier(0.26, 0.53, 0.74, 1.48);
+  animation-fill-mode: backwards;
+}
+
+.animation.glow {
+  animation-name: animation;
+  animation-timing-function: ease;
+}
+
+@keyframes animation {
+  0% {
+    opacity: 0;
+    transform: scale(0.999, 0.999);
+    -webkit-transform: scale(0.999, 0.999);
+    -moz-transform: scale(0.999, 0.999);
+    -ms-transform: scale(0.999, 0.999);
+    -o-transform: scale(0.999, 0.999);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1, 1);
+  }
+}
+
+.delay-1 {
+  animation-delay: 0.1s;
+}
+.delay-2 {
+  animation-delay: 1s;
+}
+.delay-3 {
+  animation-delay: 1.5s;
+}
