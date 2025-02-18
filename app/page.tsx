@@ -165,7 +165,7 @@ export default function Home() {
             options={chartOptions}
             series={chartSeries}
             type="bar"
-            height="9000"
+            height="12000"
           />
         )}
       </div>
