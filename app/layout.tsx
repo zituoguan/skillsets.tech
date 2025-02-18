@@ -46,6 +46,12 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Footer />
+        <Script
+          src="https://static.cloudflareinsights.com/beacon.min.js"
+          defer
+          data-cf-beacon='{"token": "4dd047ecbe1c4e9891cde5fee9f8d1fb"}'
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
