@@ -1,7 +1,8 @@
 {
   "name": "skillsets",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
