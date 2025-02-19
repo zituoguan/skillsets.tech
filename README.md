@@ -1,6 +1,8 @@
-<h1 align="center">SkillSets</h1>
+# [skillsets.tech](https://skillsets.tech)
 
-<p align="center"><b>Discover the most wanted skills by recruiters. Browse skills required for your job position.</b></p>
+**Discover the most wanted skills by recruiters. Browse skills required for your job position.**
+
+![skillsets.tech](./public/assets/images/skillsets.jpg)
 
 SkillSets is an application that analyzes job advertisements and extracts the most in-demand skills, technologies, and tools for different IT positions.
 
