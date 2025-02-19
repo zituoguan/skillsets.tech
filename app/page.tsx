@@ -145,7 +145,7 @@ export default function Search() {
 
       <div className="mt-4 text-center animation glow delay-1">
         <button
-          className="inline-flex items-center justify-center px-8 py-4 mt-8 text-sm text-white bg-indigo-500 border border-2 border-indigo-500 rounded hover:bg-indigo-500 hover:shadow-lg"
+          className="inline-flex items-center justify-center px-8 py-4 mt-8 text-sm text-white bg-indigo-500 border border-2 border-indigo-500 rounded hover:bg-indigo-500 hover:shadow-lg sm:mb-0 mb-4"
           onClick={() => setSortByTrend(!sortByTrend)}
         >
           {sortByTrend ? "Sort by Count" : "Sort by Trend"}
@@ -155,6 +155,16 @@ export default function Search() {
             className="w-5 ml-2"
           />
         </button>
+        <Link href="/chart" className="sm:ml-8 ml-0">
+          <button className="inline-flex items-center justify-center px-8 py-4 text-sm text-indigo-500 border border-2 border-indigo-300 rounded bg-indigo-50 hover:bg-indigo-50 hover:shadow-lg">
+            View skills chart
+            <img
+              src="/assets/icons/chart.svg"
+              alt="arrow-right"
+              className="w-5 ml-3"
+            />
+          </button>
+        </Link>
       </div>
 
       <div className="max-w-screen-sm p-4 mx-auto mt-10 mb-40 animation glow delay-1">
