@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     siteName: "SkillSets",
     images: [
       {
-        url: "",
+        url: "https://skillsets.tech/assets/images/skillsets.jpg",
         width: 1200,
         height: 630,
       },
