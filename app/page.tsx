@@ -107,9 +107,9 @@ export default function Search() {
   return (
     <>
       <header className="mt-48 text-center animation glow delay-1">
-        <h2 className="p-4 text-4xl font-bold sm:p-0">
-          Search the most wanted skills by recruiters
-        </h2>
+        <h1 className="p-4 text-4xl font-bold sm:p-0">
+          Discover the most wanted skills by recruiters
+        </h1>
         <h2 className="p-4 mt-8 text-xl sm:p-0">
           Browse skills required for your job position
         </h2>
