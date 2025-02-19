@@ -5,13 +5,6 @@ export default function Footer() {
     <footer className="max-w-screen-lg mx-auto py-5 bg-[rgba(11,11,11,0.8)] backdrop-blur-lg rounded-t animation glow delay-3">
       <div className="flex justify-around items-center text-white text-sm max-w-screen-md mx-auto">
         <Link
-          href="/about"
-          className="flex items-center space-x-2 hover:underline"
-        >
-          <span></span>
-          <span>About</span>
-        </Link>
-        <Link
           href="/contribute"
           className="flex items-center space-x-2 hover:underline"
         >
@@ -26,6 +19,15 @@ export default function Footer() {
         >
           <span></span>
           <span>GitHub</span>
+        </a>
+        <a
+          href="https://x.com/juraj_stefanic"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center space-x-2 hover:underline"
+        >
+          <span></span>
+          <span>Twitter</span>
         </a>
         <a
           href="https://www.linkedin.com/in/jurajstefanic/"
