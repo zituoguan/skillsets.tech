@@ -375,7 +375,7 @@ export default function SkillDetail() {
       </div>
       <hr className="my-4" />
       <div className="mt-8">
-        <h2 className="mb-8 text-lg font-bold">🔗 Complimentary Skills</h2>
+        <h2 className="mb-8 text-lg font-bold">🔗 Complementary Skills</h2>
         {complimentarySkills.higherSkills.map((skill, index) => (
           <p key={index} className="mb-4 text-md">
             <span className="text-green-500">+</span>{" "}
