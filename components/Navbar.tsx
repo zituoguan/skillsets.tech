@@ -42,7 +42,7 @@ export default function Navbar() {
                 <p className="mr-8 text-xs text-white sm:text-sm">
                   Last updated
                   <br />
-                  February 2025
+                  March 2025
                 </p>
               </li>
             </ul>
