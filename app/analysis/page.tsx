@@ -47,7 +47,7 @@ export default function Analysis() {
   }, [emblaApi, onSelect]);
 
   return (
-    <div className="mt-30 mb-30">
+    <div className="mt-40 mb-40">
       <div className="relative mx-auto max-w-4xl">
         <div className="overflow-hidden" ref={emblaRef}>
           <div className="flex">
