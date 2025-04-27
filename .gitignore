@@ -44,4 +44,4 @@ next-env.d.ts
 /.python/*
 
 # data
-/public/data
+# /public/data

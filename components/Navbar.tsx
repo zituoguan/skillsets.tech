@@ -17,14 +17,14 @@ export default function Navbar() {
         <div className="relative flex flex-wrap items-center justify-between max-w-screen-xl p-4 mx-auto">
           <a href="/" className="flex items-center space-x-3">
             <span className="self-center text-2xl font-bold text-white sm:text-4xl whitespace-nowrap">
-              Skill<span className="text-indigo-500">Sets</span>
+              <span className="text-indigo-500">硬技能</span>
             </span>
           </a>
           <button
             onClick={() => setDropdownOpen((prev) => !prev)}
             className="flex items-center w-auto px-5 py-5 mx-auto text-sm text-black bg-indigo-100 rounded"
           >
-            Job Positions
+            职位类别
             <img
               src="/assets/icons/chevron.svg"
               alt="chevron"
@@ -40,9 +40,9 @@ export default function Navbar() {
             <ul className="flex flex-col p-1 mt-4 space-y-2 border border-gray-100 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0">
               <li>
                 <p className="mr-8 text-xs text-white sm:text-sm">
-                  Last updated
+                  最后更新
                   <br />
-                  March 2025
+                  2025年3月
                 </p>
               </li>
             </ul>
@@ -63,10 +63,10 @@ export default function Navbar() {
                   >
                     <img
                       src="/assets/icons/frontend.svg"
-                      alt="frontend"
+                      alt="前端"
                       className="w-5 h-5 mr-2"
                     />
-                    Frontend
+                    前端
                   </Link>
                 </li>
                 <li>
@@ -77,10 +77,10 @@ export default function Navbar() {
                   >
                     <img
                       src="/assets/icons/backend.svg"
-                      alt="backend"
+                      alt="后端"
                       className="w-5 h-5 mr-2"
                     />
-                    Backend
+                    后端
                   </Link>
                 </li>
                 <li>
@@ -91,7 +91,7 @@ export default function Navbar() {
                   >
                     <img
                       src="/assets/icons/devops.svg"
-                      alt="devops"
+                      alt="DevOps"
                       className="w-5 h-5 mr-2"
                     />
                     DevOps
@@ -105,7 +105,7 @@ export default function Navbar() {
                   >
                     <img
                       src="/assets/icons/ai.svg"
-                      alt="AI"
+                      alt="人工智能"
                       className="w-5 h-5 mr-2"
                     />
                     AI / ML
@@ -121,10 +121,10 @@ export default function Navbar() {
                   >
                     <img
                       src="/assets/icons/data.svg"
-                      alt="data"
+                      alt="数据"
                       className="w-5 h-5 mr-2"
                     />
-                    Data
+                    数据
                   </Link>
                 </li>
                 <li>
@@ -135,10 +135,10 @@ export default function Navbar() {
                   >
                     <img
                       src="/assets/icons/full-stack.svg"
-                      alt="full stack"
+                      alt="全栈"
                       className="w-5 h-5 mr-2"
                     />
-                    Full Stack
+                    全栈
                   </Link>
                 </li>
                 <li>
@@ -149,7 +149,7 @@ export default function Navbar() {
                   >
                     <img
                       src="/assets/icons/design.svg"
-                      alt="design"
+                      alt="设计"
                       className="w-5 h-5 mr-2"
                     />
                     UX / UI
@@ -163,10 +163,10 @@ export default function Navbar() {
                   >
                     <img
                       src="/assets/icons/technical-writing.svg"
-                      alt="technical writing"
+                      alt="技术写作"
                       className="w-5 h-5 mr-2"
                     />
-                    Tech Writing
+                    技术写作
                   </Link>
                 </li>
               </ul>
@@ -179,10 +179,10 @@ export default function Navbar() {
                   >
                     <img
                       src="/assets/icons/quality-assurance.svg"
-                      alt="quality assurance"
+                      alt="质量保证"
                       className="w-5 h-5 mr-2"
                     />
-                    QA
+                    测试 / QA
                   </Link>
                 </li>
                 <li>
@@ -193,10 +193,10 @@ export default function Navbar() {
                   >
                     <img
                       src="/assets/icons/mobile.svg"
-                      alt="mobile"
+                      alt="移动端"
                       className="w-5 h-5 mr-2"
                     />
-                    iOS / Android
+                    iOS / 安卓
                   </Link>
                 </li>
                 <li>
@@ -207,10 +207,10 @@ export default function Navbar() {
                   >
                     <img
                       src="/assets/icons/management.svg"
-                      alt="project management"
+                      alt="项目管理"
                       className="w-5 h-5 mr-2"
                     />
-                    Management
+                    项目管理
                   </Link>
                 </li>
                 <li>
@@ -221,29 +221,13 @@ export default function Navbar() {
                   >
                     <img
                       src="/assets/icons/cybersecurity.svg"
-                      alt="cybersecurity"
+                      alt="网络安全"
                       className="w-5 h-5 mr-2"
                     />
-                    Cybersecurity
+                    网络安全
                   </Link>
                 </li>
               </ul>
-              {/* <ul className="mt-10 space-y-10 sm:mt-0">
-                <li>
-                  <Link
-                    href="/quality-assurance"
-                    className="flex items-center text-black hover:text-indigo-500"
-                    onClick={closeDropdown}
-                  >
-                    <img
-                      src="/assets/icons/quality-assurance.svg"
-                      alt="quality assurance"
-                      className="w-5 h-5 mr-2"
-                    />
-                    Cybersecurity
-                  </Link>
-                </li>
-              </ul> */}
             </div>
           </div>
         )}

@@ -73,7 +73,7 @@ export default function SkillDetail() {
             const compositeKey = `${month}-${year}`;
             monthCounts[compositeKey] = (monthCounts[compositeKey] || 0) + 1;
           }
-          const industry = job.industry || "Unknown";
+          const industry = job.industry || "未知";
           industryCounts[industry] = (industryCounts[industry] || 0) + 1;
         }
       });
@@ -158,7 +158,12 @@ export default function SkillDetail() {
 
   const chartCategories = availableCompositeKeys.map((key) => {
     const [month, year] = key.split("-");
-    return month.charAt(0).toUpperCase() + month.slice(1) + " " + year;
+    return (
+      month.charAt(0).toUpperCase() +
+      month.slice(1) +
+      " " +
+      year
+    );
   });
   const chartData = availableCompositeKeys.map(
     (key) => (skillInfo.monthCounts && skillInfo.monthCounts[key]) || 0
@@ -171,10 +176,10 @@ export default function SkillDetail() {
     },
     xaxis: { categories: chartCategories },
     yaxis: {
-      title: { text: "Monthly mentions" },
+      title: { text: "每月提及数" },
     },
     title: {
-      text: "Monthly Mentions",
+      text: "每月提及数",
       align: "center",
     },
     stroke: {
@@ -196,7 +201,7 @@ export default function SkillDetail() {
     },
   };
 
-  const chartSeries = [{ name: "Mentions", data: chartData }];
+  const chartSeries = [{ name: "提及数", data: chartData }];
 
   const overallTrend = calculateAverageTrend(skillInfo.monthCounts || {});
 
@@ -232,17 +237,17 @@ export default function SkillDetail() {
       </h1>
       <div className="inline-flex space-x-8">
         <p className="mb-2 text-lg">
-          Ranked:{" "}
+          排名:{" "}
           <span className="font-bold text-indigo-500">#{skillInfo.rank}</span>
         </p>
         <p className="text-lg">
-          Mentions:{" "}
+          提及数:{" "}
           <span className="font-bold text-indigo-500">{skillInfo.count}</span>
         </p>
       </div>
       <hr className="my-4" />
       <div className="mt-8">
-        <h2 className="mb-8 text-xl font-bold">📈 Monthly Mentions</h2>
+        <h2 className="mb-8 text-xl font-bold">📈 每月提及数</h2>
         <ul>
           {sortedMonthEntries.map(([compositeKey, count], index) => {
             const [monthName, year] = compositeKey.split("-");
@@ -277,7 +282,7 @@ export default function SkillDetail() {
                 <span className="ml-4 font-bold text-indigo-500">
                   {count}
                 </span>{" "}
-                mentions{" "}
+                次提及{" "}
                 <span
                   className={`text-sm font-bold px-2 py-1 bg-indigo-50 border border-indigo-500 rounded ${percentageColor}`}
                 >
@@ -289,7 +294,7 @@ export default function SkillDetail() {
         </ul>
         <div className="mt-8">
           <p className="my-4 text-md">
-            Average trend &rarr;{" "}
+            平均趋势 &rarr;{" "}
             <span
               className={`${
                 overallTrend.averageTrend.startsWith("+")
@@ -308,13 +313,13 @@ export default function SkillDetail() {
               ℹ️
               {activeTooltip === "average" && (
                 <span className="absolute w-32 px-3 py-2 text-xs text-white bg-black rounded-lg shadow-md sm:w-56 left-8 -top-4">
-                  The average percentage change in mentions over time.
+                  提及数随时间变化的平均百分比变化。
                 </span>
               )}
             </span>
           </p>
           <p className="my-4 text-md">
-            Median trend &rarr;{" "}
+            中位趋势 &rarr;{" "}
             <span
               className={`${
                 overallTrend.medianTrend.startsWith("+")
@@ -333,13 +338,13 @@ export default function SkillDetail() {
               ℹ️
               {activeTooltip === "median" && (
                 <span className="absolute w-32 px-3 py-2 text-xs text-white bg-black rounded-lg shadow-md sm:w-56 left-8 -top-4">
-                  The median percentage change in mentions over time.
+                  提及数随时间变化的中位百分比变化。
                 </span>
               )}
             </span>
           </p>
           <p className="my-4 text-md">
-            CAGR trend &rarr;{" "}
+            年复合增长率 &rarr;{" "}
             <span
               className={`${
                 overallTrend.cagrTrend.startsWith("+")
@@ -358,7 +363,7 @@ export default function SkillDetail() {
               ℹ️
               {activeTooltip === "cagr" && (
                 <span className="absolute w-32 px-3 py-2 text-xs text-white bg-black rounded-lg shadow-md sm:w-56 left-8 -top-4">
-                  The compound annual growth rate in mentions over time.
+                  提及数随时间变化的复合年增长率。
                 </span>
               )}
             </span>
@@ -375,7 +380,7 @@ export default function SkillDetail() {
       </div>
       <hr className="my-4" />
       <div className="mt-8">
-        <h2 className="mb-8 text-lg font-bold">🔗 Complementary Skills</h2>
+        <h2 className="mb-8 text-lg font-bold">🔗 相关技能</h2>
         {complimentarySkills.higherSkills.map((skill, index) => (
           <p key={index} className="mb-4 text-md">
             <span className="text-green-500">+</span>{" "}
@@ -387,7 +392,7 @@ export default function SkillDetail() {
               <span className="ml-4 font-bold text-indigo-500">
                 {skill.count}
               </span>{" "}
-              mentions
+              次提及
             </Link>
           </p>
         ))}
@@ -402,14 +407,14 @@ export default function SkillDetail() {
               <span className="ml-4 font-bold text-indigo-500">
                 {skill.count}
               </span>{" "}
-              mentions
+              次提及
             </Link>
           </p>
         ))}
       </div>
       <hr className="my-8" />
       <div className="mt-8">
-        <h2 className="mb-8 text-lg font-bold">📊 Top Industries</h2>
+        <h2 className="mb-8 text-lg font-bold">📊 主要行业</h2>
         <ul>
           {topIndustries.map((industry, index) => (
             <li key={index} className="my-4 text-md">
@@ -424,7 +429,7 @@ export default function SkillDetail() {
               <span className="ml-4 font-bold text-indigo-500">
                 {industry.count}
               </span>{" "}
-              mentions
+              次提及
             </li>
           ))}
         </ul>

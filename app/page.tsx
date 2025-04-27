@@ -108,10 +108,10 @@ export default function Search() {
     <>
       <header className="mt-48 text-center animation glow delay-1">
         <h1 className="p-4 text-4xl font-bold sm:p-0">
-          Discover the most wanted skills by recruiters
+          发现招聘者最需要的技能
         </h1>
         <h2 className="p-4 mt-8 text-xl sm:p-0">
-          Browse skills required for your job position
+          浏览你职位所需的技能
         </h2>
       </header>
 
@@ -119,14 +119,14 @@ export default function Search() {
         <div>
           <p className="font-bold text-indigo-500 text-7xl">{jobAdsCount}</p>
           <br />
-          <p className="text-xl font-bold">job ads analyzed</p>
+          <p className="text-xl font-bold">已分析职位广告</p>
         </div>
         <div>
           <p className="font-bold text-indigo-500 text-7xl">
             {uniqueSkillsCount}
           </p>
           <br />
-          <p className="text-xl font-bold">skills found</p>
+          <p className="text-xl font-bold">发现技能数</p>
         </div>
       </div>
 
@@ -139,7 +139,7 @@ export default function Search() {
           onChange={(e) => setSearchTerm(e.target.value)}
         />
         <p className="mt-4 text-center text-xs text-gray-500 sm:px-0 px-4">
-          💡 Search multiple skills by separating them with a space
+          💡 可用空格分隔搜索多个技能
         </p>
       </div>
 
@@ -148,7 +148,7 @@ export default function Search() {
           className="inline-flex items-center justify-center px-8 py-4 mt-8 text-sm text-white bg-indigo-500 border border-2 border-indigo-500 rounded hover:bg-indigo-500 hover:shadow-lg sm:mb-0 mb-4"
           onClick={() => setSortByTrend(!sortByTrend)}
         >
-          {sortByTrend ? "Sort by Count" : "Sort by Trend"}
+          {sortByTrend ? "按数量排序" : "按趋势排序"}
           <img
             src="/assets/icons/sort.svg"
             alt="arrow-right"
@@ -157,7 +157,7 @@ export default function Search() {
         </button>
         <Link href="/chart" className="sm:ml-8 ml-0">
           <button className="inline-flex items-center justify-center px-8 py-4 text-sm text-indigo-500 border border-2 border-indigo-300 rounded bg-indigo-50 hover:bg-indigo-50 hover:shadow-lg">
-            View skills chart
+            查看技能趋势图
             <img
               src="/assets/icons/chart.svg"
               alt="arrow-right"
@@ -180,11 +180,11 @@ export default function Search() {
                 </div>
                 <div className="flex-grow my-2 ml-8">
                   <p className="text-lg font-semibold">{skill.skill}</p>
-                  <p>{skill.count} mentions</p>
+                  <p>{skill.count} 次提及</p>
                 </div>
                 <div className="ml-auto">
-                  <div className="px-2 py-2 text-sm text-lg font-bold border border-indigo-500 rounded">
-                    <p className="mb-1 text-xs font-normal">Trending</p>
+                  <div className="px-2 py-2 text-sm text-lg font-bold border border-indigo-500 rounded w-[75.2px] text-center">
+                    <p className="mb-1 text-xs font-normal">趋势</p>
                     <span
                       className={`${
                         parseFloat(skill.medianTrend.replace("%", "")) > 0

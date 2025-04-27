@@ -57,7 +57,7 @@ export default function Analysis() {
                 height="500px"
                 width="500px"
                 src="/assets/images/index.png"
-                alt="Index"
+                alt="首页"
               />
             </div>
             <div className="flex-[0_0_100%] min-w-0 relative">
@@ -66,7 +66,7 @@ export default function Analysis() {
                 height="500px"
                 width="500px"
                 src="/assets/images/home.png"
-                alt="Home"
+                alt="主页"
               />
             </div>
             <div className="flex-[0_0_100%] min-w-0 relative">
@@ -75,7 +75,7 @@ export default function Analysis() {
                 height="500px"
                 width="500px"
                 src="/assets/images/frontend.png"
-                alt="Frontend"
+                alt="前端"
               />
             </div>
             <div className="flex-[0_0_100%] min-w-0 relative">
@@ -84,7 +84,7 @@ export default function Analysis() {
                 height="500px"
                 width="500px"
                 src="/assets/images/backend.png"
-                alt="Backend"
+                alt="后端"
               />
             </div>
             <div className="flex-[0_0_100%] min-w-0 relative">
@@ -93,7 +93,7 @@ export default function Analysis() {
                 height="500px"
                 width="500px"
                 src="/assets/images/devops.png"
-                alt="DevOps"
+                alt="运维"
               />
             </div>
             <div className="flex-[0_0_100%] min-w-0 relative">
@@ -102,7 +102,7 @@ export default function Analysis() {
                 height="500px"
                 width="500px"
                 src="/assets/images/data.png"
-                alt="Data"
+                alt="数据"
               />
             </div>
             <div className="flex-[0_0_100%] min-w-0 relative">
@@ -111,7 +111,7 @@ export default function Analysis() {
                 height="500px"
                 width="500px"
                 src="/assets/images/full-stack.png"
-                alt="Full Stack"
+                alt="全栈"
               />
             </div>
             <div className="flex-[0_0_100%] min-w-0 relative">
@@ -120,7 +120,7 @@ export default function Analysis() {
                 height="500px"
                 width="500px"
                 src="/assets/images/ux-ui.png"
-                alt="UX/UI"
+                alt="用户体验/界面设计"
               />
             </div>
             <div className="flex-[0_0_100%] min-w-0 relative">
@@ -129,7 +129,7 @@ export default function Analysis() {
                 height="500px"
                 width="500px"
                 src="/assets/images/quality-assurance.png"
-                alt="Quality Assurance"
+                alt="质量保证"
               />
             </div>
             <div className="flex-[0_0_100%] min-w-0 relative">
@@ -138,7 +138,7 @@ export default function Analysis() {
                 height="500px"
                 width="500px"
                 src="/assets/images/ios-android.png"
-                alt="iOS/Android"
+                alt="iOS/安卓"
               />
             </div>
             <div className="flex-[0_0_100%] min-w-0 relative">
@@ -147,7 +147,7 @@ export default function Analysis() {
                 height="500px"
                 width="500px"
                 src="/assets/images/management.png"
-                alt="Management"
+                alt="管理"
               />
             </div>
             <div className="flex-[0_0_100%] min-w-0 relative">
@@ -156,7 +156,7 @@ export default function Analysis() {
                 height="500px"
                 width="500px"
                 src="/assets/images/ai-ml.png"
-                alt="AI/ML"
+                alt="人工智能/机器学习"
               />
             </div>
             <div className="flex-[0_0_100%] min-w-0 relative">
@@ -165,7 +165,7 @@ export default function Analysis() {
                 height="500px"
                 width="500px"
                 src="/assets/images/technical-writing.png"
-                alt="Technical Writing"
+                alt="技术写作"
               />
             </div>
             <div className="flex-[0_0_100%] min-w-0 relative">
@@ -174,7 +174,7 @@ export default function Analysis() {
                 height="500px"
                 width="500px"
                 src="/assets/images/cybersecurity.png"
-                alt="Cybersecurity"
+                alt="网络安全"
               />
             </div>
           </div>
@@ -186,14 +186,14 @@ export default function Analysis() {
             onClick={scrollPrev}
             disabled={!prevBtnEnabled}
           >
-            Previous
+            上一张
           </button>
           <button
             className="bg-indigo-500 text-white py-2 px-4 rounded hover:bg-indigo-600 disabled:opacity-50"
             onClick={scrollNext}
             disabled={!nextBtnEnabled}
           >
-            Next
+            下一张
           </button>
         </div>
 
@@ -205,7 +205,7 @@ export default function Analysis() {
                 index === selectedIndex ? "bg-indigo-500" : "bg-gray-300"
               }`}
               onClick={() => scrollTo(index)}
-              aria-label={`Go to slide ${index + 1}`}
+              aria-label={`跳转到第 ${index + 1} 张幻灯片`}
             />
           ))}
         </div>

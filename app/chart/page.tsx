@@ -45,7 +45,7 @@ export default function TrendsTechChart() {
         december: 12,
       };
 
-      // Build monthly counts for each technology.
+      // 为每项技术构建每月计数。
       const monthlyCounts: Record<string, Record<string, number>> = {};
       const techDisplayMap: Record<string, string> = {};
 
@@ -122,7 +122,7 @@ export default function TrendsTechChart() {
         xaxis: {
           categories: sortedMonths,
           title: {
-            text: "Months",
+            text: "月份",
             style: { fontSize: "14px", fontFamily: "JetBrains Mono" },
           },
           labels: { rotate: -45 },
@@ -130,7 +130,7 @@ export default function TrendsTechChart() {
         },
         yaxis: {
           title: {
-            text: "Number of Mentions",
+            text: "提及次数",
             style: { fontSize: "14px", fontFamily: "JetBrains Mono" },
           },
           min: 0,
@@ -148,7 +148,7 @@ export default function TrendsTechChart() {
           shared: false,
           intersect: true,
           y: {
-            formatter: (val: number) => `${val} mentions`,
+            formatter: (val: number) => `${val} 次提及`,
           },
           marker: {
             show: false,
@@ -164,10 +164,10 @@ export default function TrendsTechChart() {
     <>
       <header className="mt-48 text-center animation glow delay-1">
         <h2 className="p-4 text-4xl font-bold sm:p-0">
-          The most wanted skills chart by recruiters
+          招聘者最想要的技能趋势图
         </h2>
         <h2 className="p-4 mt-8 text-xl sm:p-0">
-          Browse skill trends required for your job position
+          浏览你职位所需的技能趋势
         </h2>
       </header>
 
@@ -181,7 +181,7 @@ export default function TrendsTechChart() {
           maxLength={40}
         />
         <p className="mt-4 text-center text-xs text-gray-500 sm:px-0 px-4">
-          💡 Search multiple skills by separating them with a space
+          💡 可用空格分隔多个技能进行搜索
         </p>
       </div>
 

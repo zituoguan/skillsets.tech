@@ -9,14 +9,14 @@ export default function PDF() {
           height="700px"
         >
           <p className="text-center">
-            Your browser does not support PDFs.{" "}
+            您的浏览器不支持 PDF 文件。{" "}
             <a
               className="underline"
               href="/assets/images/Top 10 Most Wanted Skills.pdf"
             >
-              Download the PDF
+              下载 PDF
             </a>
-            .
+            。
           </p>
         </object>
       </div>

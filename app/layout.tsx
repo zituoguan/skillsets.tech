@@ -4,19 +4,19 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 
 export const metadata: Metadata = {
-  title: "SkillSets",
+  title: "硬技能",
   description:
-    "Discover the most wanted skills by recruiters. Browse skills required for your job position.",
-  keywords: "skillsets, skills, job, position, recruiters, most wanted skills",
+    "发现招聘者最需要的技能。浏览你职位所需的技能。",
+  keywords: "硬技能, 技能, 工作, 职位, 招聘者, 最需要的技能",
   openGraph: {
-    title: "SkillSets",
+    title: "硬技能",
     description:
-      "Discover the most wanted skills by recruiters. Browse skills required for your job position.",
-    url: "https://skillsets.tech",
-    siteName: "SkillSets",
+      "发现招聘者最需要的技能。浏览你职位所需的技能。",
+    url: "https://yingjineng.com",
+    siteName: "硬技能",
     images: [
       {
-        url: "https://skillsets.tech/assets/images/skillsets.jpg",
+        url: "https://yingjineng.com/assets/images/skillsets.jpg",
         width: 1200,
         height: 630,
       },
@@ -31,7 +31,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="zh">
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />

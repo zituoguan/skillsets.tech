@@ -7,19 +7,19 @@ export default function Form() {
         <form method="POST" action="https://api.web3forms.com/submit">
           <input type="hidden" name="access_key" value={accessKey} />
           <input type="hidden" name="redirect" value="/"></input>
-          <input type="hidden" name="from_name" value="skillsets.tech"></input>
-          <input type="hidden" name="subject" value="New Contribution"></input>
+          <input type="hidden" name="from_name" value="yingjineng.com"></input>
+          <input type="hidden" name="subject" value="新贡献"></input>
           <div className="grid md:grid-cols-2 md:gap-6">
             <div className="relative z-0 w-full mt-4 group">
               <label htmlFor="name" className="block mb-2 text-black text-md">
-                Name / Alias
+                名称 / 昵称
               </label>
               <div className="flex">
                 <span className="inline-flex items-center px-3 border border-r-0 border-[#999] rounded-l-md">
                   <img
                     src="/assets/icons/user.svg"
                     className="w-5 h-5"
-                    alt="User icon"
+                    alt="用户图标"
                   />
                 </span>
                 <input
@@ -29,23 +29,23 @@ export default function Form() {
                   id="name"
                   maxLength={30}
                   autoComplete="off"
-                  placeholder="John Doe"
+                  placeholder="张三"
                 />
               </div>
               <p className="mt-2 text-sm text-[#999]">
-                Optional - if you want a mention in contributions.
+                可选 - 如果你希望在贡献者名单中被提及。
               </p>
             </div>
             <div className="relative z-0 w-full mt-4 group">
               <label htmlFor="name" className={`block mb-2 text-black text-md`}>
-                Email
+                邮箱
               </label>
               <div className="flex">
                 <span className="inline-flex items-center px-3 border border-r-0 border-[#999] rounded-l-md">
                   <img
                     src="/assets/icons/mail.svg"
                     className="w-5 h-5"
-                    alt="Mail icon"
+                    alt="邮箱图标"
                   />
                 </span>
                 <input
@@ -55,11 +55,11 @@ export default function Form() {
                   id="email"
                   maxLength={50}
                   autoComplete="off"
-                  placeholder="john.doe@gmail.com"
+                  placeholder="zhangsan@gmail.com"
                 />
               </div>
               <p className="mt-2 text-sm text-[#999]">
-                Optional - if you want to receive a reply.
+                可选 - 如果你希望收到回复。
               </p>
             </div>
           </div>
@@ -67,7 +67,7 @@ export default function Form() {
             htmlFor="message"
             className={`block mt-4 mb-2 font-medium text-black text-md`}
           >
-            Your contribution
+            你的贡献
           </label>
           <textarea
             className={`block p-2.5 w-full text-sm text-black bg-white rounded-lg border border-[#999] focus:ring-[#6875F5] focus:border-[#6875F5]`}
@@ -76,18 +76,18 @@ export default function Form() {
             rows={5}
             maxLength={500}
             autoComplete="off"
-            placeholder="Hi, please add <skill> to the list."
+            placeholder="你好，请将 <技能> 添加到列表中。"
             required
           ></textarea>
           <button
             type="submit"
             className="inline-flex items-center justify-center mt-8 px-8 py-4 text-sm text-white bg-indigo-500 border border-2 border-indigo-500 rounded hover:bg-indigo-500 hover:shadow-lg"
           >
-            Submit contribution
+            提交贡献
             <img
               src="/assets/icons/arrow-right.svg"
               className="w-6 h-6 ms-2"
-              alt="Arrow icon"
+              alt="箭头图标"
             />
           </button>
         </form>
